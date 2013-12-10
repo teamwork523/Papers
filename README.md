@@ -1,5 +1,6 @@
-*Past Research Papers
+Past Research Papers
 ========================
 
-** Author: Haokun Luo (haokun@umich.edu)
-========================
+* Author: Haokun Luo (haokun@umich.edu)
+
+
