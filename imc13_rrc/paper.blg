@@ -1,0 +1,69 @@
+This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
+The top-level auxiliary file: paper.aux
+The style file: abbrv.bst
+Database file #1: robustnet.bib
+Warning--string name "hotmetrics" is undefined
+--line 129 of file robustnet.bib
+Warning--to sort, need author or key in spec-3G-RRC
+Warning--to sort, need author or key in spec-LTE-RRC
+Warning--to sort, need author or key in fast_dormancy
+Warning--to sort, need author or key in 3gpp.3G
+Warning--to sort, need author or key in 3gpp.lte
+Warning--to sort, need author or key in tcpdump
+Warning--to sort, need author or key in qxdm_flyer
+Warning--to sort, need author or key in spec-3G-RLC
+Warning--to sort, need author or key in snapdragon
+Warning--to sort, need author or key in mobiperf
+Warning--to sort, need author or key in jamlogger
+Warning--empty journal in incontext
+Warning--empty journal in livelab-webusage
+Warning--empty journal in livelab
+Warning--empty journal in http_measure
+Warning--empty journal in opt.tcp.rlc
+Warning--empty journal in drx
+Warning--empty journal in drx_analysis
+Warning--empty journal in tailender
+Warning--empty journal in radiojockey
+Warning--empty journal in trafficaware
+You've used 28 entries,
+            2118 wiz_defined-function locations,
+            697 strings with 8947 characters,
+and the built_in function-call counts, 5349 in all, are:
+= -- 486
+> -- 130
+< -- 0
++ -- 62
+- -- 34
+* -- 200
+:= -- 834
+add.period$ -- 68
+call.type$ -- 28
+change.case$ -- 100
+chr.to.int$ -- 0
+cite$ -- 49
+duplicate$ -- 259
+empty$ -- 602
+format.name$ -- 34
+if$ -- 1179
+int.to.chr$ -- 0
+int.to.str$ -- 28
+missing$ -- 16
+newline$ -- 127
+num.names$ -- 34
+pop$ -- 209
+preamble$ -- 1
+purify$ -- 73
+quote$ -- 0
+skip$ -- 203
+stack$ -- 0
+substring$ -- 140
+swap$ -- 22
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 110
+warning$ -- 21
+while$ -- 34
+width$ -- 30
+write$ -- 236
+(There were 22 warnings)

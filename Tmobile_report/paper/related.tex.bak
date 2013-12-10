@@ -1,0 +1,7 @@
+\section{Related Work}
+
+One of the previous cross layer study combined inferred RRC state information with collected device power trace to imply application behaviors leading to unnecessary energy consumption~\cite{aro}. Their primarily focus on the application level energy optimization instead of latency. The QxDM in our study provides more fine grained performance, latency and power information. We could have more detailed insights to understand data link layer root cause for abnormal latency and inefficient energy consumption behaviors in upper layer. 
+
+The other previous study provides cross compare analysis over the TCP and RLC protocols, and optimized the configurations based on simulation~\cite{opt.tcp.rlc}. Their primary goal is to improve the performance behavior by introducing TCP congestion control mechanism into RLC layer. However, their simulation result is purely based on simulated traces, which is less convincing to the real world network traffic scenarios. I collected traces from real-time cellular network traffic, and the identified latency problem is more realistic than their cases.
+
+\label{sec:related}

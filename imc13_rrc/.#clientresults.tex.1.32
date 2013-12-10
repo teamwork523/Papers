@@ -1,0 +1,205 @@
+\section{RRC inference results}\label{sec:clientresults}
+
+We took two main types of RRC inference-related measurements.  First, we took measurements in a controlled setting, using a set of custom RRC inference tools. There were two main components of these tests that we describe below:  a controlled deployment within T-mobile of our client-based inference tool on experimental devices, and a set of experiments on local devices requiring QXDM analysis.  Our preliminary tests to develop the RRC inference algorithm were described in \S\ref{sec:stateinferencemethodology} and we do not repeat them here.
+
+Second, we also deployed a pared-down version of our coarse-grained timer inference tool in order to understand global trends in RRC state machine behavior. The most important difference between that tool and our internal tool is that our internal tool will always perform a complete set of tests, whereas the widely-distributed version may take an incomplete set of measurements if there is a loss of cellular connectivity (for example, if the device switches to WiFi.) These tests allow us to understand trends in RRC state implementations and performance around the world, and how they differ by carrier, device model and network technology.We describe the results of these tests in \S\ref{sec:largescalestudy}.
+
+
+%\comment{TODO update all measured Mobiperf/Tmobiperf values - how long can I wait?}
+
+%\subsection{Network Measurements}
+% A summary of all the ongoing traces
+%We performed a  variety of measurement studies to understand the RRC state machine and the impact of RRC state and state transitions of network latency. We divide our measurements into three categories. 
+
+%First, we continuously perform the RRC state inference measurements locally against a local server for 3 weeks to confirm the abnormal FACH state behaviors. We will refer the traces as \emph{LOCAL\_{}TRACE}. Second, in order to further identify the in depth root cause of the transport layer latency in the lower layer behavior during initial FACH state, we monitor the RRC inference measurements in QxDM, and apply cross layer analysis on exported the logging results. We will refer the trace as \emph{QxDM\_{}TRACE}. Third, to understand the RRC state variance across different carriers and network types, we deploy our RRC state inference mechanism by deploying on MobiPerf~\cite{tcpdump}, which is a global scale Android measurement application. We will refer the trace as \emph{MOBIPERF\_{}TRACE} later.
+
+\subsection{Controlled Results}
+
+We collect several sets of measurements locally in order to perform an in-depth examination of RRC states and their effect on performance in the wild.  First, we discuss the results from our controlled deployment of the RRC inference tool.  For internal testing, we had N distinct devices covering N models in N locations. We also made use of a small number of devices on different carriers for validation of our measurement techniques for different carriers.  In \S~\ref{sec:root.cause.analysis} we then present an in-depth analysis using QXDM of root causes of the performance phenomena that we observe.
+ 
+We found that all of the timers and state machines were consistent for devices in several locations across the US.  For EDGE, the timer between the low-power and high-power state is 1.5s, with no intermediate state detected. For LTE, we found a timer of 2s, although only from one device. For HSDPA, we found a timer of 3s to demote from DCH to IDLE, and did not detect any FACH state.  For UMTS, there is a 2.5s timer to demote to FACH and another 2.5s timer to demote to IDLE, although in practice often the delay is obscured by the high-latency FACH demotion behavior. 
+
+We confirmed that these timers are correct using power monitor measurements, QXDM measurements and through discussion with network technicians at T-mobile.  \comment{TODO how do they compare with T-mobile's expectations? This is a claim we hope to be able to make once confirmed; if not we need to talk about how they differ. We've confirmed UMTS only.}
+%There is a second RRC state machine deployed in some locations for 3G that we did not detect. %\comment{ARe the two state machines for two different technologies?}
+
+One interesting phenomenon we observed is that sometimes there is a significant delay when a packet is sent during demotion from DCH to FACH.  An example can be seen in Figure~\ref{fig:rtt_raw_data_22}.  A similar delay sometimes occurs during demotion from RRC\_CONNECTED to RRC\_IDLE for LTE in our large-scale study, as discussed in \S\ref{sec:largescalestudy} but is less common. In this large-scale study we determined that this is not carrier-specific, but discovered it is far more common with some devices than in others.  This delay results in round-trip times that are generally even greater than those in IDLE.  
+
+These delays can often occur for a significant amount of the time that the device should experience FACH behavior, and in some cases this delay occurs throughout all of FACH.  Given that the purpose of FACH is to provide lower latency for small packets than in IDLE, at the expense of power consumption, the potential impact of this phenomenon is quite significant.
+
+We also measured the performance (in terms of UDP RTT) for various network technologies for this carrier. We made use of the same data used for model inference, and so we examine large and small packets separately.  We summarize the results in Figure~\ref{fig:network_tech_compare}.  We classify DCH and RRC\_CONNECTED, for 3G and 4G technologies, as high power; IDLE and RRC\_IDLE as low-power, and FACH as medium-power.  The RTT spike when transitioning from DCH to FACH is indicated as "transition", and for this carrier occured only for UMTS. No error bars are shown for HSDPA since we only have one set of measurements for this technology.
+
+Unsurprisingly, for each state the round-trip time improves slightly for newer technologies, with this effect being most notable for the high-power state.  For the low-power state, and for small packets in particular, there appears to be a slight improvement in average performance but not always to a statistically significant degree.
+
+The latency spike on transitioning to FACH from DCH, as well as the latency during FACH, makes the benefit of using FACH as a tradeoff between power and performance look questionable.  The variance of these states among different devices is enormous, but on average FACH more closely resembles PCH than DCH, even for smaller packets.  Furthermore, the performance during the transition from DCH to FACH is on average worse than in IDLE, and in the worst case can lead to delays of several seconds.  This data suggests that, for many devices, the benefit of using FACH may be marginal.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.45\textwidth]{figs/network_tech_compare.png}
+\end{center}
+\ncaption{Performance of Various Network Technologies for a Single Carrier (T-mobile)}
+\label{fig:network_tech_compare}
+\end{figure}
+
+Finally, we examined the impact of RRC state on several higher-level protocols.  We investigated the time to complete a DNS lookup, a TCP handshake, and the loading of a small webpage over HTTP.  For the DNS test, we generated a random, invalid URL, as we found that on some of our devices we could not reliably flush the DNS cache.  For TCP, we measured the time to perform a TCP handshake with "www.google.com", and we measured the time to access "www.google.com" through HTTP.
+
+Unsurprisingly, for TCP and DNS lookups, the latency pattern was essentially the same as for UDP.  The delay caused by RRC promotion was in these cases a significant proportion of the overall delay.  For HTTP, however, the impact of RRC state was not statistically significant, although the measured results varied enormously.  This is also relatively unsurprising, as the RRC state will only affect the first packet sent.  RRC state will primarily impact frequent, low-bandwidth transmissions, such as applications that perform periodic polling, as suggested in previous work~\cite{aro}.
+
+%\begin{figure}
+%\begin{center}
+%\includegraphics[width=0.45\textwidth]{figs/extra_tests.png}
+%\end{center}
+%\ncaption{Impact of RRC state on non-UDP protocols}
+%\label{fig:extra_tests}
+%\end{figure}
+
+The fine-grained LTE measurment results were discussed in \S\ref{sec:lteshorttimers}, where we describe how they informed the development of our fine-grained inference technique and demostrated the feasibility of this analysis.  
+
+\subsubsection{Cross-Layer Root-Cause Analysis with QxDM}\label{sec:qxdm.analysis}
+First, we identify the root cause of unexpected latencies by making use of results from a set of QxDM measurements that we will refer to as \emph{QxDM\_{}Trace}.  We propose in \S\ref{sec:eval} an approach to avoid these unexpected latencies.  Next, we use \emph{QxDM\_{}Trace} to identify the prevalence and root causes of UDP packet losses.  These packet losses are also measured and described in our large-scale deployment in \S\ref{sec:largescalestudy}.
+
+%\S~\ref{sec:root.cause.analysis} identifies the root cause of latency by results from both emph{QxDM\_{}Trace}, and propose RLC Fast retransmission mechanism to reduce the RLC delay. \S~\ref{sec:udp.loss.analysis} is a case study of utilizing the cross layer mapping and retransmission calculation technique to identify the root cause of the UDP packet loss.
+%\subsection{Cross Layer Analysis with QxDM}\label{sec:qxdm.analysis}
+%\S~ref{sec:rrc.term} defines and highlights subset of FACH state so that we could have fine grained understanding the abnormal latency issue. \S~\ref{sec:root.cause.analysis} identifies the root cause of latency by results from both emph{QxDM\_{}Trace}, and propose RLC Fast retransmission mechanism to reduce the RLC delay. \S~\ref{sec:udp.loss.analysis} is a case study of utilizing the cross layer mapping and retransmission calculation technique to identify the root cause of the UDP packet loss.
+
+However, as at the RLC layer we can observe various phenomena that are not detectable at higher layers, we will start by defining some terminology. Because the the promotion period for PCH and FACH differs from their initial period due to additional signaling overhead, we want to distinguish between a RRC state with and without involving transitions. Since we focus on the initial period of data transmission, the RRC state promotion is more meaningful than state demotion, which is the end of whole data transmission period. So RRC state promotion is our preliminary concern for this project. We break down the normal FACH into an initial FACH state and FACH to DCH promotion state, named as FACH\_{}INIT and FACH\_{}PROMOTE specifically. Similarly, PCH was divided into PCH\_{}INIT and PCH\_{}PROMOTE. Since the FACH promotion timer is on average 0.92 seconds and PCH promotion state is on average 0.21 seconds. We define the FACH\_{}PROMOTE state as the time slot of counting back 0.92 seconds from the point of promoting to DCH. For the same reason, PCH\_{}PROMOTE state describes the time slot of counting back 0.21 seconds from the point of promoting to FACH.
+
+%\subsubsection{Root Cause of Latency}\label{sec:root.cause.analysis}
+% explain why we want to calculate RLC layer retransmission and how to calculate
+
+There are two possible behaviors of RLC retransmission that leads to transport layer delay. The first one is that retransmission is necessary because of noisy channel during FACH state. Based on QxDM result, we could see a strong correlation between RLC retransmission ratio and FACH state as an evidence. One possible solution is that application could batch the data transmission to reduce the RRC state promotion frequency~\cite{3g_rrc}. The second one is the retransmission get unnecessary delayed caused by the lagging response to the PDU loss signal. We also observe it from \emph{QxDM\_{}Trace} when we studied the relationship between TCP retransmission and RLC retransmission. We will also provide a improved RLC mechanism to avoid the unnecessary delay later.
+
+% UDP trace analysis
+Analyzing the \emph{QxDM\_{}Trace} based on the RLC retransmission calculation methodology, we calculate the RLC retransmission ratio per RRC state in Figure~\ref{fig:RLC.Loss.Per.RRC.UDPTrace}. As we can see, the RLC retransmission among FACH and FACH\_{}PROMOTE in total are \textit{46.63\%} for HTC One S device with standard deviation of \textit{4.28\%}, and \textit{14.23\%} for Galaxy S3 devices with standard deviation of \textit{0.66\%}. It strongly suggested the significant delay over the FACH\_{}INIT and FACH\_{}PROMOTE states, which indicates the higher chance of RLC retransmission in a resource shared and noisy channel during FACH state. The observation is consistent with the abnormal delays during initial FACH state as we could also observe radio bearer configuration signaling and other system signaling exchange between the handset and the base station. We also observe that the HTC device has a higher loss rate than that of Galaxy S3. One possible explanation for device dependent behavior is that the difference in hardware module. The HTC One S was produced over Snapdragon S3 MSM8260, while the Galaxy S3 contains Snapdragon S4 MSM8960, which is the next generation of the one for HTC One S. The wireless radio techniques for Snapdragon S4 has support for larger range of network types~\cite{snapdragon}. The detailed discussion about the hardware differences is out of the scope of this paper.
+
+% RLC Loss ratio per RRC state
+\begin{figure}
+\centering
+\includegraphics[width=0.5\textwidth]{figs/rlc_retx_udp.eps}
+\ncaption{Significant RLC retransmission ratio over stable FACH state and FACH promotion state strongly implies the upper layer latency during the beginning part of the data transmission}
+\label{fig:RLC.Loss.Per.RRC.UDPTrace}
+\end{figure}
+
+%TCP Trace Analysis
+TCP retransmission timeout (RTO) could cause apparent round trip delay due to congestion window drop by half and restarting the data transmission from the slow start phase~\cite{tcp.rto}. From the \emph{QxDM\_{}Trace}, we correlate the TCP retransmission behavior with the RLC retransmission through our mapping algorithm. By capturing the root cause of the TCP RTO, we found that current RLC protocol has a sluggish response to the PDU lost sigals -- the duplicate ACKs, in Figure~\ref{fig:RLC.Dup.Ack}. The delayed RLC retransmission PDUs leads TCP RTO, which further introduces latency in the transport layer. In 3GPP RLC specification, the sender only retransmits the PDU once it receives the STATUS LIST (or non-acknowledged) control PDU from the receiver, but ignores to duplicate ACKs, which is a strong hint for PDU loss~\cite{spec-3G-RLC}. If we could bring the group of retransmitted RLC PDUs from 2.8 s to 0.5 s, then we could avoid TCP RTO, reducing the latency more than 2.3 s. Therefore, we propose a RLC \textit{Fast Re-Tx} mechanism, which will retransmit the unacknowledged PDUs once the sender receives three duplicate RLC PDU ACKs. The faster reaction to loss signals could reduce RLC layer latency and further reduce the latency in transport layer.
+
+% explain the root cause of the longer delay analysis
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.5\textwidth]{figs/rlc_dup_ack.eps}
+\ncaption{Two Latency Causes: short DCH demotion timer and lagging response to the PDU lost signal}
+\label{fig:RLC.Dup.Ack}
+\end{figure}
+
+% UDP loss analysis
+%\subsubsection{Root Cause of Packet Loss}\label{sec:udp.loss.analysis}
+UDP protocol doesn't guarantee the data package delivery, because the sender doesn't receive feedback from the receiver. We are interested in understanding the UDP loss behaviors over each RRC state, and also identify the root cause of UDP packet loss. As we instrument a unique "sequence number" for every UDP packet in \emph{QxDM\_{}TRACE}, we are able to apply the one-to-one mapping of UDP packet from client side \emph{QxDM\_{}TRACE} to the server side tcpdump trace. Each packet loss is considered as an packet appeared on the client side, but not on the server side. The RRC state of a packet means the state when it was transmitted. The packet loss ratio per RRC state is calculated as the number of packets get lost over that state divided by the total number of packets over that state. In Figure~\ref{fig:udp.loss}, the loss ratio really depends on the devices. HTC One S has a higher loss ratio over, DCH, and FACH state. While Samsung Galaxy S3 is more lossy over the PCH state. As the device is generally stay in DCH and FACH state, the Galaxy S3 will be less loss than the HTC device.
+
+% UDP Loss Ratio plot
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.5\textwidth]{figs/udp_loss.eps}
+\ncaption{UDP loss depends on both the application}
+\label{fig:udp.loss}
+\end{figure}
+
+To identify the root cause of the UDP loss, we apply the cross layer mapping algorithm, and analyze the RLC layer behaviors. We are interested in whether the UDP packets get lost in the cellular network or in the internet. Based on 3GPP specificaiton~\cite{spec-3G-RLC}, RLC PDUs will be lost in between the handset and the Node-B, because either the sender retransmit the PDU more than a pre-defined limit or the sender was reset by the receiver. After map each UDP packet with a corresponding RLC PDUs, we will check whether the sender received a reset control PDU from the receiver, or the number of retransmitted PDU exceeding the pre-defined limit. The rest of the cases would count as the UDP lost over the internet. In Figure~\ref{fig:udp.loss.root.cause}, most of the UDP packets are lost over the internet, which is primarily because the RLC layer ARQ (Automatic Repeat reQuest) mechanism in the RLC layer. 
+
+% UDP Loss Root Cause
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.5\textwidth]{figs/udp_loss_root_cause.eps}
+\ncaption{The major loss cause of UDP packets comes from internet, but not in the cellular network}
+\label{fig:udp.loss.root.cause}
+\end{figure}
+
+
+\subsection{Large-Scale Study}\label{sec:largescalestudy}
+
+ To get a broader range of data, we also integrated the coarse-grained RTT measurement functionality into Mobiperf~\cite{mobiperf}, an existing general network performance measurement application.  We collected incomplete sets of RTT data and aggregated the results (as opposed to the internally-used application, which measures an entire set of tests all at once), and we collected data points from 0 to 20 second inter-packet intervals, rather than 0 to 15 seconds as we did for our controlled study.
+
+We had N distinct devices on N carriers, with N models in N countries, including a wide range of countries such as the US, Germany, the UAE, Indonesia and China.  Phone identifiers were hashed to preserve user anonymity.  Because of the incomplete data provided by devices in the public test, N devices never uploaded sufficient data to perform the RRC inference task.
+%TODO fill in numbers
+
+First, we examine the inferred RRC states for the devices for which data has been collected.  The results are summarized in Table~\ref{tab:rrc_state_table}.  There are a limited number of different RRC state machines that seem to be implemented in practice, even accross very different carriers, and this is especially true for LTE.  Timers of 6-7 seconds for LTE seem to be most common, although in the US timers of 10 seconds seem most common. For 3G, there is far more variation, but usually devices fall back to FACH within 2.5 to 4.5 seconds.  FACH can last from 3-9 seconds, with lower values being far more common.
+
+For mort carriers, we have only a small number of devices per carrier, and so it is difficult to determine if the RRC state machine for a specific carrier varies by device or location.  However, for several major US carriers we had a number of different users accross the country.  For example, for AT\&T, we collected data from users in Michigan, California, Pensylvania, and Florida.  The inferred timers for each network technology are almost always consistent accross these geographic regions, within half a second.  The one exception is Verizon ---  we observed two different LTE timers in two different geographic locations with the same model of phone.  
+
+
+Focusing specifically on 3G technologies, we can investigate the variations in state machines.  As was shown in previous work, some carriers will, upon recieving a packet in IDLE, go directly to DCH regardless of the size of the packet, whereas others might first pass through FACH~\cite{3g_rrc}.  In our survey of carriers, we found five distinct RRC state machines that always pass through FACH whether promoting or demoting, and six that do not enter FACH when promoting from IDLE.  There were four additional RRC state machines where data was sufficiently noisy that a significant number of measurements taken were ambiguous; three of these had the majority of their measurements consistent with entering FACH in both scenarios.  Additionally, eight devices which lacked carrier information entered FACH in both directions, and two did not enter FACH when promoting.
+
+Single-directional FACH state machines were most common outside of the US; additionally, Verizon exhibited both patterns on different devices.  We did not observe any other RRC state machine patterns. 
+
+DCH to FACH transition delays were common as well and were not carrier-specific, but appear to be dependent on the device model. Considering only the devices for which we have ten or more tests, where we can be confident that latency spikes in this transition period are not due to random noise, 64\% exhibited this behavior during the DCH to FACH transition.
+
+Additionally, models  that exhibit this behavior exhibit it consistently across different carriers in every case.  Furthermore, there seems to be some manufacturer dependence on this phenomenon. All of the HTC models, and half of the Samsung models, exhibited this behavior.  We only had data from one Motorola model, but it did not exhibit this behavior. Overall, two thirds of device models exhibited this behavior. In figure~\ref{fig:device_compare} this effect can be clearly seen.  For two different devices on the same network and using the same network technology, not only are there substantial differences in performance and loss rate, but only one of them exhibits an extra delay immediately after a state demotion.
+
+
+
+
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.45\textwidth]{figs/all_carrier_timers.png}
+\end{center}
+\ncaption{CDF of RRC 3G and major LTE timers. Lumped devices with same RRC state and timers together}
+\label{fig:timer_cdf}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.45\textwidth]{figs/device_compare.png}
+\end{center}
+\ncaption{RTTs and loss rates for an HTC One and Samsung S3 device on the same T-mobile LTE network.  Note that only the HTC device exhibits an additional delay around state demotion.}
+\label{fig:device_compare}
+\end{figure}
+
+We also examined the average performance of different RRC states, as shown in Figure~\ref{fig:all_carrier_rrc_delays}.  As most of our data was for LTE or UMTS, with the data for other technologies being mostly incomplete, we show results for these two technologies only.  We see that the pattern we saw for T-mobiperf data holds here as well, although on average the benefit of FACH in terms of performance is more apparent here. The performance in the DCH to FACH transition eriod, where it occurs, is consistently worse than in IDLE across carriers.
+
+We also sometimes observed a similar period of poor performance transitioning from RRC\_CONNECTED to RRC\_IDLE for LTE.  However, the impact of this transition period was generally smaller than the delay for RRC\_IDLE, and so this phenomena does not have nearly as serious an impact as it does for 3G.
+
+The very high standard deviation for RRC\_IDLE in LTE is to be expected as discuntinuous reception (DRX) means that the delay to transmit a packet in RRC\_IDLE will vary significantly depending on when it is sent.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.45\textwidth]{figs/all_carrier_rrc_delays.png}
+\end{center}
+\ncaption{Promotion delays for each state for all carriers surveyed}.
+\label{fig:all_carrier_rrc_delays}
+\end{figure}
+
+We also examined trends in packet losses in different RRC states for these carriers.  These trends were easier to observe for our larger study as losses were generally more common in these less-controlled environments. Again, we compare 3G and LTE.
+
+%\comment{Why are losses higher for smaller packets? Is this expected behavior?}
+
+%\comment{If time permits perform this analyis for our T-mobile data set, however due to the database problems this sort of analysis may be more time-consuming to do (as I'm currently parsing a giant dump of the database contents)}
+
+Unsurprisingly, losses are generally quite low in high-power states (DCH or RRC\_CONNECTED), and are lower than in low-power states.  This is especially the case for LTE, where losses in RRC\_IDLE are significantly higher. 
+
+During the transition from DCH to FACH in 3G, losses are quite significant.  Interestingly, losses in FACH are also quite high.  This likely explains why FACH performance is often worse than expected.
+
+%\comment{I suspect this occurs more when we get the bad FACH behavior, would be good to verify}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.45\textwidth]{figs/loss_compare.png}
+\end{center}
+\ncaption{Packets lost per state, as a fraction.  Note that LTE data is rather limited.}
+\label{fig:loss_compare}
+\end{figure}
+
+
+
+There is an unexplained, but consistent delay in the middle of FACH for a major UK carrier. We have only one device using that carrier, but the delay has occurred consistently for 23 different tests. Further investigation would be required to determine the root cause of the delay.
+
+
+%\comment{Tmobile timers consistent.  Only variation is FACH noise for UMTS.  EDGE: timer 1.5s, no FACH-like state.  HSDPA: only one data point, timer 3s, no FACH.  LTE: timer 2s, one data point and kind of noisy (but collecting data on a second data point).  UMTS: 2.5s timer for DCH and another 2.5 on FACH, often eaten by demotion-related delay.}
+
+
+
+%\begin{figure}
+%\begin{center}
+%\includegraphics[width=0.45\textwidth]{figs/placeholder.png}
+%\end{center}
+%\ncaption{Performance for each device for T-mobile only; colour-code by geographic state - TODO - not much interesting data? lower priority}
+%\label{fig:fach_demotion_delay_prevalence}
+%\end{figure}

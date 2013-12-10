@@ -1,0 +1,2 @@
+Second, a number of devices never uploaded accurate data on the network technology used --- either because they never updated from the original application version that did not collect this data, or because their device always returns the value "UNKNOWN". We exclude these devices from any findings that require knowing the specific network technology.   We therefore focus on 27 devices with complete data in this section --- these cover 9 countries, 16 carriers and 20 distinct device models from six manufacturers.
+

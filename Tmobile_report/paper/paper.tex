@@ -1,0 +1,179 @@
+% Change to use the correct class file for your paper.
+\documentclass{sig-alternate-10pt}
+
+%\pagenumbering{arabic}
+
+\usepackage{amsfonts}     % Adds math fonts, commands such as \begin{align}
+\usepackage{array}        % Tables for use in math mode
+\usepackage{booktabs}     % Elegant table-formatting library
+\usepackage{bold-extra}   % Provides bf+sc (only in textbf+textsc env.)
+\usepackage{bytefield}    % Formatting and layout of packets / bytefields
+\usepackage[skip=5pt]{caption}
+\usepackage{color}        % Allow the use and definition of colors
+\usepackage{colortbl}     % Color table cells
+\usepackage{comment}      % Provides \begin,\end{comment} for large blocks
+%\usepackage{cprotect}     % Allows verbatim, other formatting in macro args
+\usepackage{endnotes}     % Footnotes pushed to the end of a document
+\usepackage{gensymb}      % Adds useful symbols w/out math mode, e.g. \degree
+\usepackage{graphicx}     % For importing graphics
+\usepackage{hyperref}     % Creates hyperlinks from ref/cite 
+\hypersetup{pdfstartview=FitH}
+\usepackage{listings}     % in-line source code (poorly, consider minted)
+\usepackage{mathtools}    % amsmath extension, adds more math formatting
+\usepackage{multirow}     % Multiple row spacing in tables
+\usepackage{nth}          % Typeset 33rd correctly as \nth{33}
+%\usepackage[section]{placeins} % Don't let figs escape their sections
+\usepackage{rotating}     % Rotates any object, note sideways != sidewaysfigure
+%\usepackage[all=normal]{savetrees} % For when space is tight, read manual and
+                          % selectively enable things. CAN BREAK CONF STYLES!!
+\usepackage{soul}         % Provides \hl{} for highlighting
+%\usepackage{subfig}
+%\usepackage{subfigure}    % Complicated figure creation
+\usepackage{subcaption}   % Replaces both subfig and subfigure
+\usepackage[nofancy]{svninfo} % svn information in docs (req. svn:keywords)
+\usepackage{tabularx}     % Complicated table creation
+\usepackage{threeparttable} % Add footnotes to a table
+\usepackage{units}        % For nice fractions, \nicefrac{1}{2} --> 1/2
+\usepackage{url}          % Pretty printing of hyperlinks
+\usepackage{xspace}       % Intelligently add spaces after commands
+
+%%%%%
+% used in QxDM section
+\usepackage{epstopdf}
+\epstopdfsetup{update}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage{array}
+\usepackage{tabularx}
+%%%%%
+
+\usepackage{epsfig,xspace,multirow,capt-of}
+\usepackage{hyperref}
+\usepackage{graphicx,amssymb,amsmath,endnotes}
+\usepackage{times}
+\usepackage{ulem}
+\usepackage{rotating}
+\usepackage{wasysym, pifont}
+
+\DeclareCaptionType{copyrightbox}
+
+\newlength\SUBSIZE
+
+\renewcommand{\arraystretch}{1.2} % Space out rows in tables
+
+%\setlength\paperheight {11in}
+%\setlength\paperwidth {8.5in}
+
+\hyphenpenalty=800
+\tolerance=400
+
+% italics for bibliography
+\normalem
+
+
+%%%%%
+% new command
+\newcommand{\MR}[1]{\multirow{2}{*}{#1}}
+
+\newcommand{\mysection}[1]{\vspace{-.07in}\section{#1}\vspace{-.02in}}
+\newcommand{\mysubsection}[1]{\vspace{-.05in}\subsection{#1}\vspace{-.02in}}
+\newcommand{\mysubsubsection}[1]{\vspace{-.05in}\subsubsection{#1}\vspace{-.02in}}
+
+
+\newcommand{\hd}[1]{\small{\textbf{\texttt{#1}}}\normalsize}
+\newcommand{\hds}[1]{\small{\textbf{\texttt{#1}}}}
+\newcommand{\hdf}[1]{\small{\textbf{\texttt{#1}}}\footnotesize}
+
+\newcommand{\ISP}{$\sf\small{ISP}$}
+\newcommand{\ISPP}{$\sf\small{ISP}$ }
+\newcommand{\UMICH}{$\sf\small{UMICH}$}
+\newcommand{\UMICHH}{$\sf\small{UMICH}$ }
+
+\newcommand{\YY}{\CIRCLE}
+\newcommand{\NN}{\Circle}
+\newcommand{\YN}{\RIGHTcircle}
+\newcommand{\XX}{\ding{53}}
+
+\newcommand{\Ignore}[1]{{\small }}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\newcommand{\etc}{\emph{etc.}\xspace}
+\newcommand{\ie}{\emph{i.e.,}\xspace}
+\newcommand{\eg}{\emph{e.g.,}\xspace}
+\newcommand{\etal}{\emph{et al.}\xspace}
+\newcommand{\wrt}{\emph{w.r.t.}\xspace}
+\newcommand{\aka}{\emph{a.k.a.}\xspace}
+\newcommand{\AlgBox}[1]{{\framebox[1.2\width]{\textbf{#1}}}}
+
+\renewcommand{\paragraph}[1]{\smallskip\noindent{\bf{#1.}}}
+\newcommand{\paragrapha}[1]{\smallskip\noindent{\bf{#1}}}
+%\renewcommand{\algorithmiccomment}[1]{//#1}
+
+\makeatletter
+  \newcommand\figcaption{\def\@captype{figure}\caption}
+  \newcommand\tabcaption{\def\@captype{table}\caption}
+\makeatother
+
+\newcommand{\vsp}{\vspace{+0.15in}}
+
+\newcommand{\nsection}[1]{\vspace{-1em}\section{#1}\vspace{-0.7em}}
+\newcommand{\nsubsection}[1]{\vspace{-0.85em}\subsection{#1}\vspace{-0.55em}}
+\newcommand{\nsubsubsection}[1]{\vspace{-0.4em}\subsubsection{#1}\vspace{-0.3em}}
+\newcommand{\ncaption}[1]{
+ 	\vspace{-1.2em}
+	\caption{#1}
+ 	\vspace{-1.5em}
+}
+%%%%%
+
+
+\begin{document}
+
+\title{Fast Re-Tx: Mobile Latency Optimization with Cross Layer Analysis}
+
+% AUTHOR STYLE 1
+\author{
+ \alignauthor{Haokun Luo}\\
+ \affaddr{University of Michigan}\\
+ \email{\{haokun\}@umich.edu}
+}
+
+\conferenceinfo{TMobile User Intelligent Project} {Jan 10--Apr 23, 2013, Ann Arbor, Michigan, USA.}
+\CopyrightYear{2013}
+
+\maketitle
+
+\begin{abstract}
+\input{abstract}
+\end{abstract}
+
+
+\terms{Mobile, Measurement}
+\keywords{RRC state machine, Cross Layer Analysis, RLC Fast Retransmission, Latency Optmization}
+
+%\newpage
+
+% page limit          % 14.0 pg
+% abstract            %  0.5 pg
+%\vfill\eject
+\input{intro}         % 1.5 pg
+\input{related}       % 2.0 pg
+%\clearpage
+\input{measure}         % 3.0 pg
+\input{crossAnalysis}
+\input{eval}          % 4.0 pg
+\input{disc}          % 0.5 pg
+\input{conc}          % 0.25 pg
+\input{ack}           % 0.25 pg
+
+%Uncomment this line if your paper has / uses end notes
+%\theendnotes
+
+%\footnotesize
+\raggedright
+\sloppy
+\bibliographystyle{abbrv}
+\bibliography{bib}
+
+
+\end{document}
+

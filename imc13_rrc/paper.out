@@ -1,0 +1,18 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}
+\BOOKMARK [1][-]{section.2}{Background}{}
+\BOOKMARK [1][-]{section.3}{RRC State InferenceMethodology}{}
+\BOOKMARK [2][-]{subsection.3.1}{RRC Inference Client Design}{section.3}
+\BOOKMARK [2][-]{subsection.3.2}{RRC Inference Server Design}{section.3}
+\BOOKMARK [1][-]{section.4}{Cross-Layer AnalysisMethodology}{}
+\BOOKMARK [2][-]{subsection.4.1}{QxDM Experiments}{section.4}
+\BOOKMARK [2][-]{subsection.4.2}{Cross-Layer Mapping Algorithm}{section.4}
+\BOOKMARK [2][-]{subsection.4.3}{RLC Retransmission Calculation}{section.4}
+\BOOKMARK [1][-]{section.5}{Evaluation Results}{}
+\BOOKMARK [2][-]{subsection.5.1}{Controlled Experiments}{section.5}
+\BOOKMARK [3][-]{subsubsection.5.1.1}{Cross-Layer Root-Cause Analysis with QxDM}{subsection.5.1}
+\BOOKMARK [2][-]{subsection.5.2}{Public Deployment of the Inference Tool}{section.5}
+\BOOKMARK [1][-]{section.6}{Proposed RLC Fast Retransmission}{}
+\BOOKMARK [2][-]{subsection.6.1}{Cost-Benefit Analysis}{section.6}
+\BOOKMARK [1][-]{section.7}{Related Work}{}
+\BOOKMARK [1][-]{section.8}{conclusion}{}
+\BOOKMARK [1][-]{section.9}{References}{}

@@ -1,0 +1,259 @@
+%%% Months
+@string{JAN = "January"}
+@string{FEB = "February"}
+@string{MAR = "March"}
+@string{APR = "April"}
+@string{MAY = "May"}
+@string{JUN = "June"}
+@string{JUL = "July"}
+@string{AUG = "August"}
+@string{SEP = "September"}
+@string{OCT = "October"}
+@string{NOV = "November"}
+@string{DEC = "December"}
+
+%%% Journals
+@string{PIEEE = "Proceedings of the IEEE"}
+@string{IEEEJSAC = "IEEE J. Selected Areas in Communications"}
+@string{IEEETN = "IEEE/ACM Trans. Networking"}
+@string{IEEETCOM = "IEEE Trans. Communications"}
+@string{IEEETIT = "IEEE Trans. Information Theory"}
+@string{INTERNETWORK = "Journal of Internetworking: Research and Experience"}
+@string{IJDACS = "International Journal on Digital and Analog Communication Systems"}
+@string{IJCS = "International Journal on Communication Systems"}
+@string{ACMTCS = "ACM Trans. Computer Systems"}
+@string{JACM = "J. of the ACM"}
+@string{MTA = "Multimedia Tools and Applications"}
+@string{CC = "Computer Communications"}
+@string{IPJ = "Internet Protocol Journal"}
+
+%%% Magazines
+@string{CACM = "Communications of the ACM"}
+@string{COMPUTER = "IEEE Computer Magazine"}
+@string{IEEECOM = "IEEE Communication Magazine"}
+@string{IEEENET = "IEEE Network Magazine"}
+@string{CCR = "ACM Computer Communication Review"}
+
+%%% Conferences
+@string{INFOCOM = "Proceedings of IEEE INFOCOM"}
+@string{GLOBECOM = "Proceedings of IEEE GLOBECOM"}
+@string{GINET = "Proceedings of IEEE Global Internet Symposium"}
+@string{INET = "Proceedings of INET"}
+@string{SIGCOMM = "Proceedings of ACM SIGCOMM"}
+@string{CELLNET = "Proceedings of the 2012 ACM SIGCOMM workshop on Cellular networks"}
+@string{SIGMETRICS = "Proceedings of ACM SIGMETRICS"}
+@string{HSNMC="Proceedings of High Speed Networking and Multimedia Computing Symp."}
+@string{ICNP = "Proceedings of International Conference on Network Protocols"}
+@string{ICC = "Proceedings of International Conference on Communications"}
+@string{FTCS = "Proceedings of International Symposium on Fault-Tolerant Computing"}
+@string{ITCOM = "Proceedings of Workshop on Scalability and Traffic Control in IP Networks, SPIE ITCOM Conference"}
+@string{IMW = "Proceedings of ACM SIGCOMM IMW"}
+@string{IMC = "Proceedings of ACM IMC"}
+@string{HOTNETS = "Proceedings of Workshop on Hot Topics in Networks"}
+%%%@string{NSDI = "Proceedings ofedings of Symposium on Networked Systems Design and Implementation"}
+@string{NSDI = "Proceedings ofedings of NSDI"}
+@string{OSDI = "Proceedings ofedings of Operating Systems Design and Implementation"}
+@string{MICNET = "Proceedings ofedings of ACM MICNET"}
+@string{USENIX = "Proceedings ofedings of USENIX Security Symposium"}
+@string{CCS = "Proceedings ofedings of ACM Computer and Communications Security"}
+@string{TRUST = "Proceedings ofedings of Trust and Trustworthy Computing"}
+@string{SPSM = "Proceedings ofedings of ACM SPSM"}
+@string{NDSS = "Proceedings ofedings of Network and Distributed System Security Symposium"}
+@string{IEEESP = "Proceedings ofedings of IEEE Symposium on Security and Privacy"}
+@string{MOBICOM = "Proceedings ofedings of ACM MobiCom"}
+@string{MOBISYS = "Proceedings ofedings of ACM MobiSys"}
+%%% Publishers
+@string{AW="Addison-Wesley"}
+@string{CP="Cisco Press"}
+@string{PH="Prentice Hall"}
+
+%%% Months
+@string{JAN = "January"}
+@string{FEB = "February"}
+@string{MAR = "March"}
+@string{APR = "April"}
+@string{MAY = "May"}
+@string{JUN = "June"}
+@string{JUL = "July"}
+@string{AUG = "August"}
+@string{SEP = "September"}
+@string{OCT = "October"}
+@string{NOV = "November"}
+@string{DEC = "December"}
+
+%%% Journals
+@string{PIEEE = "Proceedings of the IEEE"}
+@string{IEEEJSAC = "IEEE J. Selected Areas in Communications"}
+@string{IEEETN = "IEEE/ACM Trans. Networking"}
+@string{IEEETCOM = "IEEE Trans. Communications"}
+@string{IEEETIT = "IEEE Trans. Information Theory"}
+@string{INTERNETWORK = "Journal of Internetworking: Research and Experience"}
+@string{IJDACS = "International Journal on Digital and Analog Communication Systems"}
+@string{IJCS = "International Journal on Communication Systems"}
+@string{ACMTCS = "ACM Trans. Computer Systems"}
+@string{JACM = "J. of the ACM"}
+@string{MTA = "Multimedia Tools and Applications"}
+@string{CC = "Computer Communications"}
+@string{IPJ = "Internet Protocol Journal"}
+
+%%% Magazines
+@string{CACM = "Communications of the ACM"}
+@string{COMPUTER = "IEEE Computer Magazine"}
+@string{IEEECOM = "IEEE Communication Magazine"}
+@string{IEEENET = "IEEE Network Magazine"}
+@string{CCR = "ACM Computer Communication Review"}
+
+%%% Conferences
+@string{INFOCOM = "Proc. IEEE INFOCOM"}
+@string{GLOBECOM = "Proc. IEEE GLOBECOM"}
+@string{GINET = "Proc. IEEE Global Internet Symposium"}
+@string{INET = "Proc. INET"}
+@string{SIGCOMM = "Proc. ACM SIGCOMM"}
+@string{CELLNET = "Proc. of the 2012 ACM SIGCOMM workshop on Cellular networks"}
+@string{SIGMETRICS = "Proc. ACM SIGMETRICS"}
+@string{HSNMC="Proc. High Speed Networking and Multimedia Computing Symp."}
+@string{ICNP = "Proc. International Conference on Network Protocols"}
+@string{ICC = "Proc. International Conference on Communications"}
+@string{FTCS = "Proc. International Symposium on Fault-Tolerant Computing"}
+@string{ITCOM = "Proc. Workshop on Scalability and Traffic Control in IP Networks, SPIE ITCOM Conference"}
+@string{IMW = "Proc. ACM SIGCOMM IMW"}
+@string{IMC = "Proc. ACM IMC"}
+@string{HOTNETS = "Proc. Workshop on Hot Topics in Networks"}
+%%%@string{NSDI = "Proc. Symposium on Networked Systems Design and Implementation"}
+@string{NSDI = "Proc. NSDI"}
+@string{OSDI = "Proc. Operating Systems Design and Implementation"}
+@string{MICNET = "Proc. ACM MICNET"}
+@string{USENIX = "Proc. of USENIX Security Symposium"}
+@string{CCS = "Proc. ACM Computer and Communications Security"}
+@string{TRUST = "Proc. Trust and Trustworthy Computing"}
+@string{SPSM = "Proc. ACM SPSM"}
+@string{NDSS = "Proc. Network and Distributed System Security Symposium"}
+@string{IEEESP = "Proc. IEEE Symposium on Security and Privacy"}
+@string{MOBICOM = "Proc. ACM MobiCom"}
+@string{MOBISYS = "Proc. ACM MobiSys"}
+%%% Publishers
+@string{AW="Addison-Wesley"}
+@string{CP="Cisco Press"}
+@string{PH="Prentice Hall"}
+
+
+@inproceedings{3g_rrc,
+	title={{Characterizing Radio Resource Allocation for 3G Networks}},
+	author={{Feng Qian, Zhaoguang Wang, Alexandre Gerber, Z. Morley Mao, and Subhabrata Sen and Oliver Spatscheck}},
+	booktitle=IMC,
+	year=2010
+}
+
+@inproceedings{4g_rrc,
+	title={{A Close Examination of Perfomance and Power Characteristics of 4G LTE Networks}},
+	author={{Junxian Huang, Feng Qian, Alexandre Gerber, Z. Morley Mao, Subhabrata Sen, and Oliver Spatscheck}},
+	booktitle=MOBISYS,
+	year=2012
+}
+
+@inproceedings{aro,
+	title={{Profiling Resource Usage for Mobile Applications: A Cross-layer Approach}},
+	author={{Feng Qian, Zhaoguang Wang, Alexandre Gerber, Z. Morley Mao, Subhabrata Sen, and Oliver Spatscheck}},
+	booktitle=MOBISYS,
+	year=2011
+}
+
+@inproceedings{bufferbloat,
+	title = {{Understanding Bufferbloat in Cellular Networks}},
+	author = {{Haiqing Jiang, Zeyu Liu, Yaogong Wang, Kyunghan Lee, and Injong Rhee}},
+	booktitle = CELLNET,
+	year = 2012
+}
+
+@inproceedings{proteus,
+	title = {{PROTEUS: Network Performance Forecast for Real-Time, Interactive Mobile Applications}},
+	author = {{Qiang Xu, Sanjeev Mehrotra, Z. Morley Mao, and Jin Li}},
+	booktitle = MOBISYS,
+	year = 2013
+}
+
+@article{opt.tcp.rlc,
+	title={{Optimizing TCP and RLC interaction in the UMTS Radio Access Network}},
+	author={{Alcaraz, Juan J., Fernando Cerdán, and Joan García-Haro}},
+	journal=IEEENET,
+	year=2006
+}
+
+@article{pkt.train,
+	title={{Evaluation and Characterization of Available Bandwidth Probing Techniques}},
+	author={{Hu, Ningning, and Peter Steenkiste}},
+	journal=IEEEJSAC,
+	year=2003
+}
+
+@Misc{3gpp.lte,
+        title = {{3GPP UMTS (3G)}},
+        howpublished ={\url{http://www.3gpp.org/UMTS}}
+}
+
+@Misc{3gpp.3G,
+        title = {{3GPP LTE}},
+        howpublished ={\url{http://www.3gpp.org/LTE}}
+}
+
+
+@Misc{tcpdump,
+        title = {{tcpdump}},
+        howpublished ={\url{http://www.tcpdump.org/}}
+}
+
+@Misc{spec-3G-RRC,
+    title = {{3GPP TS 35.331: Radio Resource Control (RRC) - UMTS}},
+    year = {2013}
+}
+
+
+@Misc{spec-LTE-RRC,
+    title = {{3GPP TS 36.331: Radio Resource Control (RRC) - LTE}},
+    year = {2013}
+}
+
+@Misc{spec-3G-RLC,
+    title = {{3GPP TS 25.322: Radio Link Control (RLC) - UMTS}},
+    year = {2013}
+}
+
+@Misc{mobiperf,
+  title =        {{MobiPerf}},
+  howpublished = {\url{http://mobiperf.com}}
+}
+
+@Misc{4gtest,
+  title =        {{4GTest}},
+  howpublished = {\url{http://mobiperf.com/4g.html}}
+}
+
+@Misc{fast_dormancy,
+    title = {{Configuration of fast dormancy in release 8. 3GPP discussion and decision notes RP-090960}},
+    year = {2009}
+}
+
+@Misc{tcp.rto,
+	title = {{Computing TCP’s retransmission timer}},
+	author = {{Vern Paxson and Mark Allman }},
+	year = {2000}, 
+	howpublised = {\url{http://tools.ietf.org/html/rfc2988}}
+}
+
+@Misc{qxdm_flyer,
+	title = {{QxDM Professional Proven Diagnostic Tool}},
+	year = {2012},
+	howpublished = {\url{http://www.qualcomm.com/solutions/testing/diagnostics-software/}}
+}
+
+@Misc{snapdragon,
+	title = {{Snapdragon (System on Chip)}},
+	year = {2013},
+	howpublished = {\url{http://en.wikipedia.org/wiki/Snapdragon_(system_on_chip)}}
+}
+
+@Misc{3g.slow,
+	title = {{Why are 3G Networks so Slow?}},
+	year = {2013},
+	howpublished = {\url{http://blog.ioshints.info/2013/04/why-are-3g-networks-so-slow.html}}
+}

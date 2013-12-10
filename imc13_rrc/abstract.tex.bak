@@ -1,0 +1,7 @@
+
+\begin{abstract}
+
+In 3G and 4G cellular networks, devices transition between different \textit{Radio Resource Control} (RRC) states in response to network traffic and according to parameters specific to network operators. These states have different energy consumption and performance (bandwidth and latency) tradeoffs. We present the first in-depth examination of the implementation of these states and their impact on performance.
+We survey the performance characteristics of devices on sixteen network operators around the world.    To achieve this, we devise a general technique for inferring RRC states for any network technology on end-user devices that addresses issues such as network noise and unexpected behavior. We also investigate \textit{Radio Link Control} (RLC) state information by developing a cross-layer analysis technique to investigate the root causes of these phenomena.  Based on our observations, we propose a new RLC \emph{Fast Re-Tx} mechanism that could reduce the RLC data transmission latency by up to 35.69\%.
+
+\end{abstract}

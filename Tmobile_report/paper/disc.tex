@@ -1,0 +1,11 @@
+\section{Discussion}
+
+\subsection{Future Work}
+The current study is primarily focus on the latency improve over the RLC layer. It is also possible to measure the delay improvement over application layer directly, especially for the initial period of the data transmission. Another possible direction is to evaluation the energy efficiency for the improved RLC protocols with fast retransmission mechanism. Since QxDM provides device data transmission power information, we could also evaluate the energy saving over each RRC state and state transitions.
+
+\subsection{Limitation}
+Since we could not modify the handset's NIC (network interface card) driver, we only evaluate the modified trace information based on the QxDM traces. Currently we assume the fast retransmitted RLC PDUs guarantee to be received on the base station, but the actual channel is lossy and the actual benefit might be lower than the simulated results. In addition, since the modification of RLC protocol requires hardware modification, the deployment of the modified protocol could be slower than a software solution.
+
+\label{sec:disc}
+
+

@@ -1,0 +1,72 @@
+\section{Background}\label{sec:background}
+
+\begin{figure}[t!]
+\centering
+\includegraphics[width=0.5\textwidth]{figs/RRC_State_Diagram.pdf}
+\ncaption{Possible 3G and 4G State Machines as Specified by 3GPP} 
+\label{fig:statemachine}
+%\begin{center}
+%\includegraphics[width=0.5\textwidth]{figs/4g_rrc.png}
+%\end{center}
+%\ncaption{4G LTE state machine based on our inference methodology}
+%\label{fig:4G_statemachine}
+\end{figure}
+
+UTMS networks, including 3G UMTS~\cite{3gpp.3G} and 4G LTE networks~\cite{3gpp.lte}, use the Radio Resource Control (RRC) protocol to allocate resources to mobile devices.  Handsets transition between different RRC states, which vary in power consumption and bandwidth, and an individual RRC state machine is maintained for each handset.  Transitions between different states occur due to traffic patterns --- in general, more traffic will cause a higher-power and higher-bandwidth state to be entered.  The RRC protocol for these network types has been defined by 3GPP~\cite{spec-3G-RRC, spec-LTE-RRC}.
+
+Different carriers implement different RRC state machines with different possible state transitions with different associated timers.  However, for 2G, 3G and 4G LTE, there are a fixed set of possible states defined. We give a brief overview below; a more detailed overview can be found in previous work~\cite{3g_rrc, 4g_rrc}.
+
+\begin{table}[th!]\small
+\begin{tabularx}{0.5\textwidth}{ | c | X | }
+\hline
+\multicolumn{2}{|c|}{3G UMTS - Specification} \\
+\hline
+DCH & high-power, high-bandwidth\\
+FACH & low-power, low-bandwidth\\
+PCH & no transmission possible\\
+\hline
+\multicolumn{2}{|c|}{3G UMTS - Observed Phenomena} \\
+\hline
+FACH TRANSITION & period of high latency when transitioning from DCH to FACH\\
+\hline
+FACH INIT & 0.58s time interval after FACH\\
+FACH PROMOTE & 0.92s time interval before DCH\\
+PCH INIT & 0.21s time interval after PCH\\
+PCH DEMOTE & 0.29s time interval before PCH\\
+\hline
+\hline
+\multicolumn{2}{|c|}{4G LTE - Specification} \\
+\hline
+RRC CONNECTED & high-power, high-bandwidth \\
+RRC IDLE & no transmission possible \\
+\hline
+\multicolumn{2}{|c|}{4G LTE - Observed Phenomena} \\
+\hline
+FACH TRANSITION & period of high latency when transitioning from DCH to FACH\\
+\hline
+\hline
+\multicolumn{2}{|c|}{QxDM Related} \\ 
+\hline
+RLC RETX RATIO & $\frac{\textit{\# of Retx PDUs}}{\textit{Total \# of PDUs for a Domain}}$ \\
+\hline
+\end{tabularx}
+\ncaption{Summary of Terminologies}
+\label{tab:terminology}
+\end{table}
+
+For 3G, there are three main states:  DCH, which is high-power and high-bandwidth, FACH, which is low power and low bandwidth, and PCH, where no transmission is possible. If a higher-bandwidth state is needed, there is a promotion delay. Some carriers may always go directly from PCH to DCH. An example RRC state machine can be seen at the top of Figure~\ref{fig:statemachine}~\cite{spec-3G-RRC}. These terms are summarized in Table~\ref{tab:terminology}.
+%As a further complication, UMTS supports \emph{fast dormancy}. The user device is able to proactively request to transition to IDLE to reduce the tail time after a data transmission where the device is a higher-power state than necessary~\cite{fast_dormancy, spec-3G-RRC}.
+
+For 4G~\cite{spec-LTE-RRC}, the state machine is more complicated, and is summarized in the bottom half of Figure~\ref{fig:statemachine}.  We are concerned mainly with transitions between RRC\_{}CONNECTED, a higher-power state, and RRC\_{}IDLE, a lower-power state where no data is transmitted --- the other states have timers on the orders of tens or hundreds of milliseconds are are not practical to measure.
+
+%There are two main states: RRC\_{}CONNECTED, a higher-power state, and RRC\_{}IDLE, a lower-power state.  RRC\_{}IDLE periodically wakes up to determine if it needs to promote to a higher-power state.  This is known as Discontinuous Reception or DRX.  We would like to infer the timer to fall back to RRC\_{}IDLE, as well as the time between ON segments in RRC\_IDLE and the length of those segments.
+
+%For RRC\_CONNECTED, there are several additional substates.  After a data transfer, the device remains in Continuous Reception for some time, before transitioning to Short DRX.  Similarly to DRC for RRC\_IDLE, the device sleeps for a short period of time, waking up periodically to check if there is data, but the sleep time is much shorter.  There is another timer to transition to Long DRX, which has a longer sleep timer than Short DRX, but still a much shorter one than in RRC\_IDLE. Additionally, the ON timers for the three DRX states can vary~\cite{spec-LTE-RRC}.
+
+Determining when to fall back to a low power state can have a substantial impact on performance, as can the state transitions supported.  For this reason, we wish to understand how carriers implement RRC state machines in practice.
+
+There are several other phenomena that we occur that are not part of this RRC specification, and we define terms to refer to these here which we will use throughout the paper.  First, there is often a significant additional promotion delay immediately after a state demotion, especially a demotion from DCH to FACH.  We refer to this as \emph{FACH\_{}TRANSITION} when it occurs immediately before FACH, and \emph{LTE\_{}TRANSITION} when it occurs in LTE.
+
+Second, when examining behavior at the RLC layer, it is useful to break down transitions between states into several steps.  We call the period of time immediately after a promotion from DCH to FACH \emph{FACH\_{}INIT}, and the period of time where FACH promotes to DCH \emph{FACH\_{}PROMOTE}.  FACH\_{}TRANSITION occurs where FACH\_{}INIT is immediately followed by FACH\_{}PROMOTE; FACH\_{}TRANSITION refers to a type of behavior observed at the UDP layer and not to RLC-level behavior.  Similarily, PCH is divided into \emph{PCH\_{}INIT} and \emph{PCH\_{}DEMOTE}.
+
+%\mycomment{these terminology on INIT, PROMOTE, and DEMOTE are not quite clear, maybe explain in terms of signaling required:  Does INIT mean that there are still signaling occurring?}

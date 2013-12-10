@@ -1,0 +1,157 @@
+\relax 
+\ifx\hyper@anchor\@undefined
+\global \let \oldcontentsline\contentsline
+\gdef \contentsline#1#2#3#4{\oldcontentsline{#1}{#2}{#3}}
+\global \let \oldnewlabel\newlabel
+\gdef \newlabel#1#2{\newlabelxx{#1}#2}
+\gdef \newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
+\AtEndDocument{\let \contentsline\oldcontentsline
+\let \newlabel\oldnewlabel}
+\else
+\global \let \hyper@last\relax 
+\fi
+
+\citation{bufferbloat}
+\citation{3gpp.3G}
+\citation{3gpp.LTE}
+\citation{in-depth}
+\citation{3g_rrc}
+\citation{aro}
+\citation{qxdm_flyer}
+\citation{3g_rrc}
+\citation{aro}
+\citation{myexperience}
+\newlabel{sec:abstract}{{}{1}{ABSTRACT\relax }{section*.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}}
+\citation{3gpp.3G}
+\citation{3gpp.LTE}
+\citation{umts_book}
+\citation{spec-3G-RRC}
+\citation{spec-LTE-RRC}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Overview architecture of \textit  {TransLayer}\relax }}{2}{figure.caption.4}}
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:translayer.overview}{{1}{2}{Overview architecture of \textit {TransLayer}\relax \relax }{figure.caption.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces The general cellular network architecture\relax }}{2}{figure.caption.5}}
+\newlabel{fig:cell.topology}{{2}{2}{The general cellular network architecture\relax \relax }{figure.caption.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Possible 3G and 4G State Machines as Specified by 3GPP.\relax }}{2}{figure.caption.6}}
+\newlabel{fig:statemachine}{{3}{2}{Possible 3G and 4G State Machines as Specified by 3GPP.\relax \relax }{figure.caption.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Background}{2}{section.2}}
+\newlabel{sec:background}{{2}{2}{Background\relax }{section.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Radio Resource Control}{2}{subsection.2.1}}
+\newlabel{subsec:background.rrc}{{2.1}{2}{Radio Resource Control\relax }{subsection.2.1}{}}
+\citation{spec-3G-RRC}
+\citation{spec-LTE-RRC}
+\citation{spec-3G-RLC}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces RLC PDU transmission in Acknowledged Mode. When the sender sends out a polling request, the receiver will respond with a "group" of acknowledge in terms of the starting PDU sequence number and the consecutive PDU loss length.\relax }}{3}{figure.caption.7}}
+\newlabel{fig:rlc.protocol}{{4}{3}{RLC PDU transmission in Acknowledged Mode. When the sender sends out a polling request, the receiver will respond with a "group" of acknowledge in terms of the starting PDU sequence number and the consecutive PDU loss length.\relax \relax }{figure.caption.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Radio Link Control}{3}{subsection.2.2}}
+\newlabel{subsec:background.rlc}{{2.2}{3}{Radio Link Control\relax }{figure.caption.7}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Challenges}{3}{section.3}}
+\newlabel{sec:challenge}{{3}{3}{Challenges\relax }{section.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Incomplete RLC PDU Logging}{3}{subsection.3.1}}
+\newlabel{subsec:partial.logging}{{3.1}{3}{Incomplete RLC PDU Logging\relax }{subsection.3.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Loose RLC RTT Estimation}{3}{subsection.3.2}}
+\newlabel{subsec:loose.rlc.rtt.estimation}{{3.2}{3}{Loose RLC RTT Estimation\relax }{subsection.3.2}{}}
+\citation{qxdm_flyer}
+\citation{spec-3G-RLC}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}IP Fragmentation and Duplication}{4}{subsection.3.3}}
+\newlabel{subsec:ip.frag.and.dup}{{3.3}{4}{IP Fragmentation and Duplication\relax }{subsection.3.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Feedback Tool}{4}{subsection.3.4}}
+\newlabel{subsec:challenge.feedback}{{3.4}{4}{Feedback Tool\relax }{subsection.3.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Cross-layer Tool Design}{4}{section.4}}
+\newlabel{sec:crossAnalysis}{{4}{4}{Cross-layer Tool Design\relax }{section.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}QxDM}{4}{subsection.4.1}}
+\newlabel{subsec:qxdm.tool}{{4.1}{4}{QxDM\relax }{subsection.4.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces QxDM log entries used in cross layer analysis\relax }}{4}{table.caption.8}}
+\newlabel{tab:QxDM.logs}{{1}{4}{QxDM log entries used in cross layer analysis\relax \relax }{table.caption.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Cross-layer Mapping}{4}{subsection.4.2}}
+\newlabel{subsec:cross-layer.mapping}{{4.2}{4}{Cross-layer Mapping\relax }{subsection.4.2}{}}
+\citation{spec-3G-RLC}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Cross-layer mapping from IP packets to RLC PDUs chains, where are a sequence of consecutive RLC PDUs. Due to the partial logging, we could only map the limited bytes for every certain length (\textit  {long jump mapping}). It is possible that one PDU could concatenate the last part of the first SDU and the first part of the second SDU. Therefore, the five RLC PDU forms a unique RLC PDU chain.\relax }}{5}{figure.caption.9}}
+\newlabel{fig:cross.layer.mapping}{{5}{5}{Cross-layer mapping from IP packets to RLC PDUs chains, where are a sequence of consecutive RLC PDUs. Due to the partial logging, we could only map the limited bytes for every certain length (\textit {long jump mapping}). It is possible that one PDU could concatenate the last part of the first SDU and the first part of the second SDU. Therefore, the five RLC PDU forms a unique RLC PDU chain.\relax \relax }{figure.caption.9}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Uniqueness Analysis}{5}{subsection.4.3}}
+\newlabel{subsec:uniqueness.analysis}{{4.3}{5}{Uniqueness Analysis\relax }{subsection.4.3}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Evaluate the uniqueness of RLC PDU chains in the standard web browsing trace\relax }}{5}{table.caption.10}}
+\newlabel{tab:uniqueness.analysis}{{2}{5}{Evaluate the uniqueness of RLC PDU chains in the standard web browsing trace\relax \relax }{table.caption.10}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Lower Layer Features}{5}{subsection.4.4}}
+\newlabel{subsec:lower.layer.features}{{4.4}{5}{Lower Layer Features\relax }{subsection.4.4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.1}RLC Retransmission}{5}{subsubsection.4.4.1}}
+\citation{loadsense}
+\citation{bad.sensor}
+\citation{3g_rrc}
+\citation{3g_rrc}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.2}First-hop Latency}{6}{subsubsection.4.4.2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.3}Power}{6}{subsubsection.4.4.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Feedback Tool Design}{6}{section.5}}
+\newlabel{sec:feedback}{{5}{6}{Feedback Tool Design\relax }{section.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Approach}{6}{subsection.5.1}}
+\newlabel{subsec:feedback.approach}{{5.1}{6}{Approach\relax }{subsection.5.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Implementation}{6}{subsection.5.2}}
+\newlabel{subsec:feedback.implementation}{{5.2}{6}{Implementation\relax }{subsection.5.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Evaluation}{6}{section.6}}
+\newlabel{sec:eval}{{6}{6}{Evaluation\relax }{section.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Dataset}{6}{subsection.6.1}}
+\newlabel{subsec:dataset}{{6.1}{6}{Dataset\relax }{subsection.6.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Case Study}{6}{subsection.6.2}}
+\newlabel{subsec:case.study}{{6.2}{6}{Case Study\relax }{subsection.6.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.2.1}Abnormal RRC State Transition}{6}{subsubsection.6.2.1}}
+\citation{internet.radio}
+\citation{tunein}
+\citation{pandora}
+\citation{loadsense}
+\citation{bartendr}
+\citation{aro}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Reproduced RRC inference algorithm results. Unexpected RTT around inter-packet timing 3.5s.\relax }}{7}{figure.caption.11}}
+\newlabel{fig:rrc.reproduce}{{6}{7}{Reproduced RRC inference algorithm results. Unexpected RTT around inter-packet timing 3.5s.\relax \relax }{figure.caption.11}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces In normalized transmission delay feature, we observe the same delay around 3.5s which matches the observation from the \emph  {Control Dataset}\relax }}{7}{figure.caption.12}}
+\newlabel{fig:rlc.normalized.transmission.delay}{{7}{7}{In normalized transmission delay feature, we observe the same delay around 3.5s which matches the observation from the \emph {Control Dataset}\relax \relax }{figure.caption.12}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces QxDM logging information around the inter-packet timing 3.5s. Substantial amount of PRACH control messages from Node B block the data plane transmission\relax }}{7}{figure.caption.13}}
+\newlabel{fig:qxdm.root.cause}{{8}{7}{QxDM logging information around the inter-packet timing 3.5s. Substantial amount of PRACH control messages from Node B block the data plane transmission\relax \relax }{figure.caption.13}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Future Work}{7}{section.7}}
+\newlabel{sec:future}{{7}{7}{Future Work\relax }{section.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.1}User Study}{7}{subsection.7.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.2}Comprehensive Analysis}{7}{subsection.7.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {8}Related Work}{7}{section.8}}
+\newlabel{sec:related}{{8}{7}{Related Work\relax }{section.8}{}}
+\citation{rilanalyzer}
+\citation{cross-layer.wireless}
+\citation{qoe.define}
+\citation{qoe.application}
+\citation{user.engagement.impact}
+\citation{qoe.predict}
+\bibstyle{abbrv}
+\bibdata{bib}
+\bibcite{3gpp.3G}{1}
+\bibcite{3gpp.LTE}{2}
+\bibcite{internet.radio}{3}
+\bibcite{pandora}{4}
+\bibcite{bad.sensor}{5}
+\bibcite{tunein}{6}
+\bibcite{qxdm_flyer}{7}
+\bibcite{spec-3G-RLC}{8}
+\bibcite{spec-3G-RRC}{9}
+\bibcite{spec-LTE-RRC}{10}
+\bibcite{qoe.predict}{11}
+\bibcite{loadsense}{12}
+\bibcite{bartendr}{13}
+\bibcite{qoe.define}{14}
+\bibcite{user.engagement.impact}{15}
+\bibcite{3g_rrc}{16}
+\@writefile{toc}{\contentsline {section}{\numberline {9}Conclusion}{8}{section.9}}
+\newlabel{sec:conc}{{9}{8}{Conclusion\relax }{section.9}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {10}Acknowledgments}{8}{section.10}}
+\newlabel{sec:ack}{{10}{8}{Acknowledgments\relax }{section.10}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {11}References}{8}{section.11}}
+\bibcite{aro}{17}
+\bibcite{umts_book}{18}
+\bibcite{bufferbloat}{19}
+\bibcite{myexperience}{20}
+\bibcite{in-depth}{21}
+\bibcite{rilanalyzer}{22}
+\bibcite{qoe.application}{23}
+\bibcite{cross-layer.wireless}{24}
+\gdef\svnInfoMinRevision{--minrevision--}
+\gdef\svnInfoMaxRevision{--maxrevision--}
+\gdef\svnInfoMaxDay{10}
+\gdef\svnInfoMaxMonth{12}
+\gdef\svnInfoMaxYear{2013}

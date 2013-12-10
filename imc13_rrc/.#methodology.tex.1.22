@@ -1,0 +1,240 @@
+\section{RRC State Inference Methodology}
+
+It has already been shown in previous work that at least two different carriers have two different RRC state machines~\cite{3g_rrc}, with implications on power consumption and performance.   A large-scale survey of the RRC state machines of different carriers would be valuable in understanding how RRC state machines are implemented and perform in the wild.  Additionally, it would allow us to determine if there are differences between phone models or if there are location-specific differences.  To do so, it is necessary to address the problem of noisy or sparse data and create an application that can run with no expert knowledge.
+
+We have also found, as we show in \S\ref{sec:clientresults}, that this theoretical RRC state model does not adequately capture the performance experienced by clients in each RRC state.  A motivating example of the problem can be seen in Figure~\ref{fig:rtt_raw_data_22}, where twenty-two sets of RRC state measurement can be seen, including results for both large (1024 byte) and small (0 byte) UDP packets.  For this 3G device, we can clearly make out the DCH state (from 0 to 2.5 seconds exactly), the FACH state at around 5 seconds, and the PCH state above 15 seconds.  There is a substantial level of noise in our measurements, but the underlying trends are clear.  
+
+There are some other unexplained phenomena, however.  After 2.5s there is a peak in average RTTs for about a second, that gradually trails off. BEtween the FACH and PCH there is also a sudden jump in RTTs.  Furthermore, there is a significant difference between the behaviour of small and large packets in PCH.  These are not explainable by a simple RRC model, and these delays have the potential to be quite significant.  This graph illustrates clearly the importance of measuring device-specific phenomena to understand the performance impact of RRC state transitions in the real world.
+
+\begin{figure*}
+\begin{center}
+\includegraphics[width=\textwidth]{figs/rtt_raw_data.png}
+\end{center}
+\ncaption{RTT as a function of time between packets, for twenty-two measurements. TODO reduce axes by two, increase font.}
+\label{fig:rtt_raw_data_22}
+\end{figure*}
+
+
+In order to accomplish this, we have created a generic client-side state inference application.  For simplicity, we will begin by explaining how it works with a 3G network before explaining its applicability to other network technologies.  Similar to the inference technique described in previous work~\cite{3g_rrc}, the core idea is to send a UDP packet that ensures the device starts in DCH state, then wait successively longer intervals before sending an additional UDP packet - either one large enough to always trigger a promotion to DCH, or a small one that can potentially be sent while remaining in FACH.  An echo server sends a packet back immediately so that the round-trip time of these two  packet types can be measured to deduce whether the device is in DCH, FACH or PCH.  A set of heuristics have been defined to identify which is which.
+
+% TODO list heuristics before and after?
+
+At first glance, the problem of large-scale RRC state inference seems straightforward.  There are only three possible states which behave in a predictable way: it suffices to find these three states based on the above heuristics  A binary search approach could even be implemented to deduce these quickly and efficiently. Unfortuately, there are several reasons why this is insufficient.
+
+First, as we have shown in our motivating example, it is not always entirely accurate to say that data falls into three clean, discrete and easy to identify states.  Even in IDLE or PCH, there can be significant differences between large and small packet RTTs (which makes our FACH heuristic a problem).  Furthermore, state transitions appear to often cause significant changes in RTTs - a number of ``pseudo-states" can appear, which can confuse a naive inference implementation. Just as importantly, it is this device- and carrier-specific anomalous behavior that we are trying to measure.
+
+Furthermore, this approach is tied to a specific network technology.  We do not want to have different algorithms for 3G, 2G and LTE if possible --- a general solution is much cleaner.  A generic state inference algorithm that can capture all of this anomalous behavior would be ideal.
+
+Additionally, we found that, while data that has been collected in the past is relatively noise-free, in practice the data collected can be very noisy, especially with weaker signal strengths.  This becomes particularly significant when trying to distinguish anomalous behavior during state transitions.  Is there a spike in RTTs due to delays on the network, or due to RTT-related delays?  If we have data from a small number of tests, this might not be obvious.  Even with many samples, it is valuable to be able to easily and efficiently determine the underlying RRC state patterns.
+
+Finally, in LTE specifically, many of the timers involved are very short, and very difficult to infer accurately due to the high level of noise in RTT measurements.  We investigate the feasibility of inferring these shorter timers, and show that, with the exception of those on the order of milliseconds, it is possible to infer these timers using packets to probe actively.  However, as there is significantly more overhead in detecting these fine-grained timers than in detecting timers on the order of seconds, we do not include this inference technique in our broader survey of RRC states.
+
+\subsection{RRC Inference Client Implementation}
+\begin{algorithm}
+\begin{algorithmic}
+\STATE {\textit{\textbf{Function} ClientDemotionTest():}}
+\FOR{$n=0$ to $30$} 
+\FOR{$i=0$ to $10$} 
+\STATE Send \emph{max} bytes, server echoes \emph{min} bytes.
+\STATE Sleep $500n$ ms.
+\STATE Send ten \emph{max} bytes, server echoes \emph{min} byte for each.
+\STATE Record average RTT and packets lost (7s timeout).
+\STATE Sleep $500n$ ms.
+\STATE Send ten \emph{max} bytes, server echoes \emph{min} byte for each.
+\STATE Record average RTT and packets lost (7s timeout).
+\IF {No other traffic sent}
+\STATE{record RTTs and losses}
+\STATE{break from inner loop}
+\ENDIF
+\ENDFOR
+\ENDFOR
+
+\end{algorithmic}
+\caption{Client-side data collection}
+\label{alg:client_collection}
+\end{algorithm}
+
+
+\begin{algorithm}
+\begin{algorithmic}
+\STATE {\textit{\textbf{Function} FindDemotionModel:}}
+\FORALL{test runs from client}
+\STATE smoothData(smallPackets)
+\STATE smoothData(largePackets)
+\ENDFOR
+\FORALL{inter-packet time intervals}
+\STATE remove outliers and average across tests
+\ENDFOR
+\IF {Less than 10 complete tests}
+\STATE smooth all data again
+\ENDIF
+\STATE smallModel $\leftarrow$ Divide smallPackets into segments with similar RTTs
+\STATE largeModel $\leftarrow$ Divide largePackets into segments with similar RTTs
+\IF {time ranges of smallModel and largeModel inconsistent}
+\IF {differ by one data point}
+\STATE Pick segment range with smallest average error on measured data
+\STATE Re-calculate segment average values for the other model
+\ELSE
+\STATE Split larger mis-matched segment to align with other model
+\STATE Re-calculate segment average values for the  model
+\ENDIF
+\ENDIF
+\end{algorithmic}
+\caption{Server-side post-processing}
+\label{alg:client_collection}
+\end{algorithm}
+
+\begin{algorithm}
+\begin{algorithmic}
+\STATE {\textit{\textbf{Function} smoothData(data):}}
+\FOR{$i$ from $1$ to length(data) $-1$}
+\STATE d $\leftarrow \lvert data\lbrack i + 1 \rbrack - data\lbrack i - 1 \rbrack \lvert$
+\IF {$d < \frac{data\lbrack i - 1 \rbrack}{4}$}
+\STATE $newData\lbrack i \rbrack \leftarrow \frac{data\lbrack i + 1 \rbrack + data\lbrack i - 1 \rbrack}{2}$
+\ELSE 
+\STATE $newData\lbrack i \rbrack \leftarrow data\lbrack i \rbrack$
+\ENDIF
+\ENDFOR
+\RETURN newData
+\end{algorithmic}
+\caption{data smoothing algorithm used in server-side post-processing}
+\label{alg:client_collection}
+\end{algorithm}
+
+%\begin{algorithm}
+%\begin{algorithmic}
+%\STATE {\textit{\textbf{Function} createPreliminaryModel(data, nCompleteTests):}}
+%\STATE currentSegment $\leftarrow \lbrack \rbrack$
+%\IF {more than 10 complete tests}
+%\STATE $r1 \leftarrow 0.25$; $r2 \leftarrow 0.5$; $r3 \leftarrow 0.75$
+%\STATE $in_spike \leftarrow 1$; $min_normal \leftarrow 2$
+%\ELSE
+%\STATE $r1 \leftarrow 0.5$; $r2 \leftarrow 0.75$; $r3 \leftarrow 1$
+%\STATE $min_{spike} \leftarrow 2$; $min_normal \leftarrow 3$
+%\ENDIF
+%\FOR{$i$ from $1$ to length(data)}
+%\IF {currentSegment is empty}
+%\STATE {Add $data\lbrack i \rbrack$}
+%\ELSE
+%\STATE avg $\leftarrow$ average over data in currentSegment
+%\STATE $d \leftarrow \lvert avg - data\lbrack i \rbrack\lvert$
+%\IF {$d < 200$ \AND $\frac{diff}{avg} > r2$ \AND items in currentSegment $> min_normal$ }
+%\STATE Save start, end and average value of segment, and start new segment 
+%\ELSIF {$200 < d < 1700 $ \AND $\frac{diff}{avg} > r1$ \AND items in currentSegment $>min_normal$}
+%\STATE Save start, end and average value of segment, and start new segment 
+%\ELSIF {$d > 200$ \AND $\frac{diff}{avg} > r3$ \AND items in currentSegment $>min_{spike}$}
+%\STATE 
+%\ELSE 
+%\STATE Add $data\lbrack i \rbrack$ to currentSegment
+%\ENDIF
+%\ENDIF
+%\ENDFOR 
+%\STATE Return all segments generated 
+%\end{algorithmic}
+%\caption{Create Preliminary Model for RRC Inference; differ by test size to conservatively ignore RTT spikes on small data sets.}
+%\label{alg:client_collection}
+%\end{algorithm}
+
+
+To address these problems, we collect data client-side, and have a server script that generates an RRC state model for each device, improving the model for each new set of data received.  This allows for a relatively lightweight client application as well as allowing the RRC state model to be based off as many tests as are available.
+
+We measure the round-trip time for small and large packets with increasing interpacket timings.  We increase the timings by half-second intervals, for intervals from 0 to 15 seconds.  For efficiency, we measure the timings for large and small packets together, by sending a 1 kB packet to induce DCH, waiting n seconds, then sending our 1 kB test packets, then waiting n seconds, then sending a 0-byte packet (containing only the header). On top of measuring round-trip times, we also send 10 packets for each test and count losses, as well as recording the signal strength values.  This data is sent to the server for processing.
+
+Additionally, we need to ensure that there is no interfering data sent by other applications that might alter the RRC state.  We do not want to require users to follow any special instructions to ensure the correctness of the data. Ideally, we want the application to be entirely transparent to the user.  Fortunately, global packet count information is available in /proc/net/dev.  For each individual test we run (i.e. every group of three packets with the same inter-packet timing) we verify that no more than the expected number of packets have been sent.  If too many packets have been sent, we abort and restart the test.  After 15 failed tries, we record that the test was unsuccessful --- perhaps the client is streaming data, and it is a bad time to run the test.  
+
+We also support recording the effects of RRC state on higher-level protocols.  To save the amount of tests that need performing, we use inferred model timers to determine the inter-packet intervals for these tests.  We support recording the impact of RRC state on DNS lookups, TCP handshakes, and HTTP connections.
+
+This methodology is only suitable for timers at the granularity of half-seconds, evidently.  For 3G this is not a problem, as timers are generally on the order of seconds.  For LTE, the timer for the transition between RRC\_CONNECTED and RRC\_IDLE isisimilarly on the order of seconds. However, as was shown in previous work~\cite{4g_rrc}, some of the timers for the states within RRC\_CONNECTED can be as small as 20 ms, and even the RRC\_IDLE cycle length requires measurements several times a second to detect.  This introduces a number of challenges.
+
+First, measuring at finer granularities significantly increases the number of measurements clients make and the time taken to complete a test by a factor of 25.  As tests in high-traffic conditions can take as long as an hour, this is evidently not ideal.  Furthermore, measuring inter-packet intervals and round-trip times at 20 ms granularities is hard for several technical reasons as well.  
+
+First of all, there is a significant amount of jitter on cellular networks, and a great deal of data needs to be collected in order to accurately measure these values. This effect can be seen in Figure~\ref{fig:LTE_development} --- compare the noisiness of data to that in Figure~\ref{fig:rtt_raw_data_22}.  For both our fine-grained and coarse-grained inference tasks, four to five tests are needed to consistently remove outliers.
+
+% TODO give some concrete values + graphs based on LTE tests here. A graph of an LTE test vs one of a coarse-grained 3G test is a clear indication of the problem.
+
+Another problem is that delays are introduced due to scheduling and overhead when implemented at the Android Framework level (i.e. in Dalvik).  A native code implementation would give us much more accurate timer and RTT values; we leave this to future work.  We have instead on several devices prototyped a packet inference system using tcpdump traces~\cite{tcpdump} to measure accurate inter-packet timings.  Using this, we were able to eliminate much of the jitter that was preventing us from taking accurate measurements and were able to infer the timer to transition from Short DRX to Long DRX as well as the cycle period of RRC\_IDLE, but were not able to infer the shorter timers in this way.  An example of the data collected for which we were able to infer these states can be seen in Figure~\ref{fig:LTE_development}.
+
+We investigated the possibility of measuring these timers passively.  By monitoring packet counters in /proc/net/dev/, it is possible to see when packets are being sent and received by existing applications on the device, thus eliminating the cost in terms of data overhead.  We monitored the packets sent and received on a device actively used by one of the authors for a week, and found that the range of inter-packet timing intervals was not sufficiently varied in order to reach any useful conclusions during that time.  As continuously monitoring background traffic in this manner can have a significant impact on battery life, this does not appear to be a feasible solution.
+
+%Question: do we have something to cite on this problem?
+
+
+\subsection{RRC Inference Server Implementation}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.45\textwidth]{figs/model_generation.png}
+\end{center}
+\ncaption{Steps in creating model.} 
+\label{fig:model_development}
+\end{figure}
+
+Aside from storing our results, the server's main role is generating the RRC state models.  Upon uploading a new set of data, a new model is generated for that device ID.
+
+In the ideal case, the data would look like Figure~\ref{fig:rtt_raw_data_22}, where it is merely a matter of filtering out noise to uncover the underlying RRC state machine and transition delay patterns.  However, in practice, we may have far less than 22 different tests for a device, and the data may more closely resemble that in Figure~\ref{fig:model_development}, part A.  We investigated how to create a reasonable model with insufficient data.  Our overall approach is to first, remove noise from the data, and then divide into continuous inter-packet timing ranges with similar behavior.  Finally, we label the states detected where possible.  Until the model creation step, we treat our large (1024 byte) packets differently from our small (0 byte) packets.
+
+Filtering noise is not always straightforward for small numbers of measurements, as interesting phenomena such as high round-trip times surrounding state transitions can look like intermittent delays.  After experimenting with several data sets and approaches, we found that two techniques in conjunction worked well.
+
+One obvious approach is to remove outliers.  If there are three tests, with round-trip times 132, 145 and 370, then most likely the third one is due to intermittent delay.  However, this is insufficient, especially when data is very noisy.  There may coincidentally be packet delays for two of the three tests, and in several data sets, this problem persisted --- it wasn't until more data was collected that it became apparent that this was just noise.
+
+We also introduce another approach, which  we refer to as smoothing and which is a sort of variation on a running average function.  We assume that any state of interest will be more than one data point wide. Therefore, if the points before and after a data point are very similar in value, but the point between them is substantially different, we assume that value is noise and substitute the average of the points before and after for that data point.  The intuition behind this approach is that we expect the model to be made of step functions (so we do not want to smooth data in this case) but we do not expect impulse-like functions - those are likely due to one-time delays.
+
+Both approaches have limitations that complement each other, and so we use both.  Smoothing works well when noise appears more or less at random, but not when there are consistent RTT delays for several consecutive tests, as occasionally happens.   Outlier removal works well when there are delays for a specific test, but not when there is a great deal of random noise.  If there are coincidentally consistent RTT delays for several tests then there is no way to distinguish that from a consistently occurring phenomenon, aside from taking enough measurements that it becomes statistically unlikely.
+
+After experimenting with various combinations fo the two tests, smoothing the data before removing outliers works best.  Removing outliers with noisy data can make the data then look like it is consistently high, and the smoothing function would then reinforce this incorrect processing step.  Where the smoothing step incorrectly raises the measured round-trip times, however, that is almost always removed through outlier removal.  We smooth the data again at the end to make the next step more reliable.  The results of these steps can be seen in Figure~\ref{fig:model_development}, parts B through D.
+
+Next, we create the model. During the first step of model creation, we continue to treat small and large packets separately.  Starting with the smallest interpacket interval, we divide the data into segments with approximately constant round-trip times by adding each successive data point to a segment in the order of increasing inter-packet intervals.  We keep track of the average value of the segment based on the data thus far, and once a new data point deviates sufficiently from the average, we create a new segment.  The results of this process can be seen in Figure~\ref{fig:model_development}, part E.
+
+Then, we compare the two models generated --- that from the large packets, and that from the small packets.  Although it is expected that the average RTTs for both models will differ, the beginning and end of each segment should not, and if they do, the model needs correcting.  There are two cases where there might be discrepancies between the two models.  First, with low amounts of data, it sometimes happens that the beginning and end of a segment for each model is off by one.  In this case, we find which segment division will result in the least average difference between the measured data and the model.  Secondly, there are some states where behavior for one packet size or the other does not change.  In particular, in the FACH state it is possible that the RTT for small packets is very close to that in DCH state.  In this case, we split the segment to correspond to the model for the other packet size.
+
+Finally, we label the states.  For 3G in particular, we relax some of the assumptions for what each state can look like.  For example, we allow the RTTs of small packets and big packets to differ substantially while in PCH state.  We place rough bounds on the sizes of RTTs for each packet type in each expected state, and we also account for the fact that we expect to see states appear in a particular order as we increase inter-packet timings (as we will never fall back to FACH, say, after seeing PCH). We label segments as "anomalous" when they do not fit into any particular state.
+
+\subsection{LTE Short Timers}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.45\textwidth]{figs/lte_naive.png}
+\end{center}
+\ncaption{Example data collected for LTE using coarse-grained measurement approach}
+\label{fig:LTE_raw}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.45\textwidth]{figs/lte_idle.png}
+\end{center}
+\ncaption{Example data collected for short LTE timers in RRC\_IDLE, focusing on lowest-noise region of test}
+\label{fig:LTE_detailed}
+\end{figure}
+
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.45\textwidth]{figs/lte_connected.png}
+\end{center}
+\ncaption{Example data collected for short LTE timers in , focused on }
+\label{fig:LTE_connected}
+\end{figure}
+
+
+This methodology is only suitable for timers at the granularity of half-seconds, evidently.  For 3G this is not a problem, as timers are generally on the order of seconds.  For LTE, the timer for the transition between RRC\_CONNECTED and RRC\_IDLE isisimilarly on the order of seconds. However, as was shown in previous work~\cite{4g_rrc}, some of the timers for the states within RRC\_CONNECTED can be as small as 20 ms, and even the RRC\_IDLE cycle length requires measurements several times a second to detect.  This introduces a number of challenges, and requires modifications to client-side and server-side code.
+
+
+Evidently, it is necessary to send data at much higher frequencies.  Instead of having inter-packet intervals increasing with increments of half-seconds, we have intervals increasing with increments of ten milliseconds.  This does, however, increase the number of tests that need to be done by a factor of fifty, and the length of time needed to complete a single test from tens of minutes to tens of hours.  As a result, we have performed these tests only on devices specifically meant for that purpose.
+
+
+Additonally, there is the problem that there is a significant amount of jitter on cellular networks, and a great deal of data needs to be collected in order to accurately measure these values. This effect can be seen in Figure~\ref{fig:LTE_raw} --- compare the noisiness of data to that in Figure~\ref{fig:rtt_raw_data_22}.  
+
+
+A large source of this problem is that delays are introduced due to scheduling and overhead when implemented at the Android Framework level (i.e. in Dalvik).   Both the values collected and the precise length for which the timers run are not accurate to the millisecond. We found that timer values, in particular, are incorrect on average by 3.3 ms, with a standard deviation of 2.8 ms, which could have a substantial impact on timers on the order of 10ms. It is possible to implement our application in C and have it run natively, using the Android NDK.  As a proof-of-concept, we have collected measurements using tcpdump~\cite{tcmpdump} instead, and extract inter-packet timings and RTT values directly. Using this, we were able to eliminate much of the jitter that was preventing us from taking accurate measurements.
+
+
+Even so, the data we receive can often be quite noisy.  For the idle period in RRC\_IDLE, it suffices to simply perform enough tests that the characteristic sawtooth pattern becomes evident (see Figure~\ref{fig:LTE_detailed}).  In our controlled experiment, one such set of data appeared in our first test performed.  However, for the timers on the order of tens of milliseconds, this is still insufficient.  To recover these, we perform several complete tests, bin inter-packet timings into 10-ms intervals, and take the minimum value of all data points.  This pre-processing step is sufficient to extract these smaller timers, as can be seen in Figure~\ref{fig:LTE_connected}.
+
+Due to the high energy and data cost of these tests, we currently limit them to controlled experiments, and as such in \S~\ref{sec:clientresults} where we perform a large-scale evaluation of global RRC state machines, we focus only on the coarse-grained timers for our LTE measurements.  Crowd-sourcing these timers seems impractical, as the battery cost would probably mean this measurement would not be worthwhile for the average user, but it is certainly possible for an interested expert to infer most LTE timers in this manner. 
+
+\comment{TODO: verify in QXDM if time permits.  Hard to see in power monitor}.
+
+RRC inference can help us detect new sources of delays, packet loss, and other performance problems, but it does not allow us to understand \emph{why} the unexpected phenomena that we detect occur.  For that, we need to examine lower-level behavior directly.  In the next section, we discuss how we approach this problem and address the issues in understanding RLC-level behavior.
+
+

@@ -1,0 +1,33 @@
+\section{Related Work}
+
+Previous work has been done on the power and performance characteristics of 3G RRC state machines~\cite{3g_rrc} as well as 4G LTE networks~\cite{4g_rrc, drx_analysis} and specific features of those networks such as DRX~\cite{drx}.  Work has also been done on exploring the implications on application performance of RRC state and inadequacies in how mobile applications deal with RRC state~\cite{aro}.  
+
+We expand upon this work by implementing an RRC inference algorithm that can automatically infer RRC states and detect anomalous or unexpected behavior, we perform a large-scale survey of RRC state machines in the wild, and discover many flaws and anomalies in RRC state machine implementations.  We determine the effects on performance by collecting the fine grained RLC layer ground truth, and correlating it with upper layer behaviors. % TODO: more technical term for QXDM-level measurements? 
+
+Other work has been done on optimizing use of the cellular network based on 3G or 4G specific phenomena. RadioJockey~\cite{radiojockey} investigates how best to trigger fast dormancy based on network traffic patterns, and TailEnder~\cite{tailender} proposes a method of scheduling data transfers to minimize energy consumption without impacting user-perceived performance.
+
+
+The other previous study provides cross compare analysis over the TCP and RLC protocols, and optimized the default protocol parameters~\cite{opt.tcp.rlc}. Their primary goal is to improve the performance behavior by introducing TCP congestion control mechanism into RLC layer. However, their traces are purely generated from simulation software, which is less convincing compared with the authentic mobile network traffics. We collected traces from real-time cellular network traffic, and the identified performance issue is much more realistic.
+
+More generally, work has been done to measure performance characteristics of cellular networks and networks on mobile devices. The Livelab project~\cite{livelab} also makes use of users running a measurement app on their phones, and has among other things focused on measuring how users interact with mobile devices, and has explored measuring web usage in the wild~\cite{livelab-webusage}. Work by Halepovic et al.,~\cite{passiveHTTP} presents a method of passively measuring HTTP transaction latency. Work by Gember et al.,~\cite{incontext} determines how to accurately measure user-perceived performance on user devices. JamLogger~\cite{jamlogger} is an ongoing project to collect general performance and user activity on mobile devices.
+
+
+%Beyond deployments and testbeds: Experiences with public usage on vehicular WiFi hotspots
+
+%Aditya Akella 	University of Wisconsin
+%    Obtaining Representative Measurements of Cellular Network Performance 
+%    Explores other factors (network traffic, location etc) that effects measurements
+%    Identify that a wide range of factors can affect measurements - we care about relative values
+%
+%Aruna Balasubramanian 	UW
+%     Energy Consumption in Mobile Phones: A Measurement Study and Implications for Network Applications 
+%        Tail energy: TailEnder: schedule to avoid tail times
+
+%Joel Sommers 	Colgate University
+%    Are Smaller Packets Less Likely to be Lost?:
+%    for cellular
+
+% Jamlogger: collects a variety of system statistics periodically in the background; does not have the same challenges as a system looking for specific data, both in measurement cost and in scheduling.  Mobiperf also is not concerned with covering location in the same way and does not have the same challenges.
+
+% LiveLab: Measuring Wireless Networks and Smartphone Users in the Field
+% MEasure general real-world smartphone usage and wireless networks. Also uses interrupt-based logging, periodic logging, and collecting when idle.  Hitch-hike onto existing wakeups.  Vary frequency based on context.  More general measurements.  They don't describe power in detail, though - it's a short pape

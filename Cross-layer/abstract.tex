@@ -1,0 +1,6 @@
+% Abstract
+
+Computer Network is originally designed in layers. The protocol decision in a single layer does not depend on the circumstances of other layers, and the scope of optimization is usually within that layer. However, single layer optimization is not necessarily the same as overall performance optimization. Because of the portability of the network protocol, same upper layer protocol could be reused under different lower layer settings. For example, TCP tends to perform worse in the cellular network compared with wired and wireless network because of distinct lower layer protocol designs and network settings. We propose a root-cause identification tool, \textit{TransLayer}, which provides a transparent view across different network layers in the cellular network. We design and implement a real-time user feedback tool to help us allocate the QoE (Quality of Experience) problems in the network layer. After pinpointing the performance problems in network layers, we could directly correlated the lower layer features from QxDM (Qualcomm eXtensible Diagnostic Monitor) logs.  We demonstrate the root cause analysis with abnormal RRC (Radio Resource Control) state transitions, and identify the root cause to be the inference between control plane and data plane traffics.
+
+\label{sec:abstract}
+

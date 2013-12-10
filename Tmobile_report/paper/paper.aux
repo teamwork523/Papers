@@ -1,0 +1,110 @@
+\relax 
+\ifx\hyper@anchor\@undefined
+\global \let \oldcontentsline\contentsline
+\gdef \contentsline#1#2#3#4{\oldcontentsline{#1}{#2}{#3}}
+\global \let \oldnewlabel\newlabel
+\gdef \newlabel#1#2{\newlabelxx{#1}#2}
+\gdef \newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
+\AtEndDocument{\let \contentsline\oldcontentsline
+\let \newlabel\oldnewlabel}
+\else
+\global \let \hyper@last\relax 
+\fi
+
+\citation{bufferbloat}
+\citation{3g.slow}
+\citation{spec-3G-RRC}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces RRC State Machine for the 3G UMTS network for T-Mobile\relax }}{1}{figure.caption.4}}
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:rrc.state.machine}{{1}{1}{RRC State Machine for the 3G UMTS network for T-Mobile\relax \relax }{figure.caption.4}{}}
+\newlabel{sec:intro}{{1}{1}{Introduction\relax }{figure.caption.5}{}}
+\citation{aro}
+\citation{opt.tcp.rlc}
+\citation{3g_rrc}
+\citation{tcpdump}
+\citation{pkt.train}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Ongoing monitoring and logging activities on QxDM\relax }}{2}{figure.caption.5}}
+\newlabel{fig:qxdm}{{2}{2}{Ongoing monitoring and logging activities on QxDM\relax \relax }{figure.caption.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Related Work}{2}{section.2}}
+\newlabel{sec:related}{{2}{2}{Related Work\relax }{section.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Measurements}{2}{section.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}RRC State Inference}{2}{subsection.3.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Unexpected large RTT during initial part of FACH state and FACH to DCH promotion transition\relax }}{2}{figure.caption.6}}
+\newlabel{fig:rrc.infer}{{3}{2}{Unexpected large RTT during initial part of FACH state and FACH to DCH promotion transition\relax \relax }{figure.caption.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Control Experiments}{2}{subsection.3.2}}
+\citation{qxdm_flyer}
+\newlabel{sec:measure}{{3.2}{3}{Control Experiments\relax }{subsection.3.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Cross Layer Analysis}{3}{section.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}QxDM Tool}{3}{subsection.4.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Verification Latency in QxDM}{3}{subsection.4.2}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces QxDM log entries used in cross layer analysis\relax }}{3}{table.caption.7}}
+\newlabel{tab:QxDM.logs}{{1}{3}{QxDM log entries used in cross layer analysis\relax \relax }{table.caption.7}{}}
+\citation{spec-3G-RLC}
+\citation{spec-3G-RLC}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces UDP RTT calculated from the QxDM log result\relax }}{4}{figure.caption.8}}
+\newlabel{fig:udp.rtt}{{4}{4}{UDP RTT calculated from the QxDM log result\relax \relax }{figure.caption.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Cross Layer Algorithm}{4}{subsection.4.3}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Decide whether one TCP/UDP packet maps to all corresponding RLC PDUs\relax }}{4}{algorithm.1}}
+\newlabel{alg:cross.mapping}{{1}{4}{Decide whether one TCP/UDP packet maps to all corresponding RLC PDUs\relax \relax }{algorithm.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}RLC Retransmission Calculation}{4}{subsection.4.4}}
+\citation{spec-3G-RLC}
+\citation{3g_rrc}
+\citation{snapdragon}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}Root Cause Analysis and Solutions}{5}{subsection.4.5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces UDP loss is device dependent and RRC state dependent\relax }}{5}{figure.caption.9}}
+\newlabel{fig:udp.loss}{{5}{5}{UDP loss is device dependent and RRC state dependent\relax \relax }{figure.caption.9}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces The major loss cause of UDP packets comes from internet, but not in the cellular network\relax }}{5}{figure.caption.10}}
+\newlabel{fig:udp.loss.root.cause}{{6}{5}{The major loss cause of UDP packets comes from internet, but not in the cellular network\relax \relax }{figure.caption.10}{}}
+\citation{tcp.rto}
+\citation{spec-3G-RLC}
+\citation{spec-3G-RLC}
+\citation{proteus}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Significant RLC retransmission ratio over stable FACH state and FACH promotion state strongly implies the upper layer latency during the beginning part of the data transmission\relax }}{6}{figure.caption.11}}
+\newlabel{fig:RLC.Loss.Per.RRC.UDPTrace}{{7}{6}{Significant RLC retransmission ratio over stable FACH state and FACH promotion state strongly implies the upper layer latency during the beginning part of the data transmission\relax \relax }{figure.caption.11}{}}
+\newlabel{sec:crossAnalysis}{{4.5}{6}{Root Cause Analysis and Solutions\relax }{figure.caption.12}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Evaluation}{6}{section.5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Two Latency Causes: short DCH demotion timer and lagging response to the PDU lost signal\relax }}{6}{figure.caption.12}}
+\newlabel{fig:RLC.Dup.Ack}{{8}{6}{Two Latency Causes: short DCH demotion timer and lagging response to the PDU lost signal\relax \relax }{figure.caption.12}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}RTT Estimation}{6}{subsection.5.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Cost-Benefit Analysis}{6}{subsection.5.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Win: RLC Fast Re-Tx avoid a TCP RTO\relax }}{7}{figure.caption.13}}
+\newlabel{fig:win}{{9}{7}{Win: RLC Fast Re-Tx avoid a TCP RTO\relax \relax }{figure.caption.13}{}}
+\newlabel{sec:eval}{{5.2}{7}{Cost-Benefit Analysis\relax }{table.caption.17}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Discussion}{7}{section.6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Draw Plus: the predication accuracy is more than 50\%\relax }}{7}{figure.caption.14}}
+\newlabel{fig:draw.plus}{{10}{7}{Draw Plus: the predication accuracy is more than 50\%\relax \relax }{figure.caption.14}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Draw Minus: the predication accuracy is less than 50\%\relax }}{7}{figure.caption.15}}
+\newlabel{fig:draw.minus}{{11}{7}{Draw Minus: the predication accuracy is less than 50\%\relax \relax }{figure.caption.15}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Future Work}{7}{subsection.6.1}}
+\bibstyle{abbrv}
+\bibdata{bib}
+\bibcite{tcpdump}{1}
+\bibcite{qxdm_flyer}{2}
+\bibcite{spec-3G-RLC}{3}
+\bibcite{spec-3G-RRC}{4}
+\bibcite{snapdragon}{5}
+\bibcite{3g.slow}{6}
+\bibcite{opt.tcp.rlc}{7}
+\bibcite{3g_rrc}{8}
+\bibcite{aro}{9}
+\bibcite{bufferbloat}{10}
+\bibcite{pkt.train}{11}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Loss: all predications fail\relax }}{8}{figure.caption.16}}
+\newlabel{fig:loss}{{12}{8}{Loss: all predications fail\relax \relax }{figure.caption.16}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces The RLC Fast Re-Tx Cost-Benefit Table\relax }}{8}{table.caption.17}}
+\newlabel{tab:rlc.fast.sim}{{2}{8}{The RLC Fast Re-Tx Cost-Benefit Table\relax \relax }{table.caption.17}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Limitation}{8}{subsection.6.2}}
+\newlabel{sec:disc}{{6.2}{8}{Limitation\relax }{subsection.6.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Conclusions}{8}{section.7}}
+\newlabel{sec:conc}{{7}{8}{Conclusions\relax }{section.7}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {8}Acknowledgments}{8}{section.8}}
+\newlabel{sec:ack}{{8}{8}{Acknowledgments\relax }{section.8}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {9}References}{8}{section.9}}
+\bibcite{proteus}{12}
+\bibcite{tcp.rto}{13}
+\gdef\svnInfoMinRevision{--minrevision--}
+\gdef\svnInfoMaxRevision{--maxrevision--}
+\gdef\svnInfoMaxDay{2}
+\gdef\svnInfoMaxMonth{5}
+\gdef\svnInfoMaxYear{2013}

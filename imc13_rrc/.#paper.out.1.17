@@ -1,0 +1,25 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}
+\BOOKMARK [1][-]{section.2}{Related Work}{}
+\BOOKMARK [1][-]{section.3}{Background}{}
+\BOOKMARK [1][-]{section.4}{RRC State Inference Methodology}{}
+\BOOKMARK [2][-]{subsection.4.1}{RRC Inference Client Implementation}{section.4}
+\BOOKMARK [2][-]{subsection.4.2}{RRC Inference Server Implementation}{section.4}
+\BOOKMARK [2][-]{subsection.4.3}{LTE Short Timers}{section.4}
+\BOOKMARK [1][-]{section.5}{Cross Layer Mechanism}{}
+\BOOKMARK [2][-]{subsection.5.1}{QxDM Experiments}{section.5}
+\BOOKMARK [2][-]{subsection.5.2}{Cross Layer Algorithm}{section.5}
+\BOOKMARK [2][-]{subsection.5.3}{RLC Retransmission Calculation}{section.5}
+\BOOKMARK [1][-]{section.6}{RRC inference results}{}
+\BOOKMARK [2][-]{subsection.6.1}{Network Measurements}{section.6}
+\BOOKMARK [2][-]{subsection.6.2}{Controlled Results}{section.6}
+\BOOKMARK [2][-]{subsection.6.3}{Cross Layer Analysis with QxDM}{section.6}
+\BOOKMARK [3][-]{subsubsection.6.3.1}{RRC State Terminology}{subsection.6.3}
+\BOOKMARK [3][-]{subsubsection.6.3.2}{Root Cause of Latency}{subsection.6.3}
+\BOOKMARK [3][-]{subsubsection.6.3.3}{Root Cause of Packet Loss}{subsection.6.3}
+\BOOKMARK [2][-]{subsection.6.4}{Large-Scale Study}{section.6}
+\BOOKMARK [1][-]{section.7}{Evaluation}{}
+\BOOKMARK [2][-]{subsection.7.1}{RLC Fast Retransmission}{section.7}
+\BOOKMARK [3][-]{subsubsection.7.1.1}{RTT Estimation}{subsection.7.1}
+\BOOKMARK [3][-]{subsubsection.7.1.2}{Cost-Benefit Analysis}{subsection.7.1}
+\BOOKMARK [1][-]{section.8}{conclusion}{}
+\BOOKMARK [1][-]{section.9}{References}{}

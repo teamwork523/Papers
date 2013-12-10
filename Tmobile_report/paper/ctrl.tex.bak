@@ -1,0 +1,11 @@
+\section{Experiments}
+
+\subsection{RRC State Machine}
+
+\subsection{Control Experiments}
+
+% UDP/ TCP control experiment set up
+The purpose of the control experiments is to verify the unexpected delays over noisy FACH state, and identify the root cause of the problem. First, we repeated our active RRC inference test for 160+ hours and dump both the client QxDM and server side tcpdump traces to perform offline analysis~\cite{tcpdump}. In order to distinguish the identities of each UDP packets, we manually injected a "sequence number" into the first four bytes of the sender's randomized payload, and the echo server sent back the received sequence number as acknowledge number in its payload. I refer the trace as \emph{UDP\_{}Trace}. Second, we designed a packet train probing using TCP packets so that we could recreate the "pseudo-state" issue~\cite{pkt.train}. Basically, we send a "train" of TCP packet size of 10 KB bytes with interleaving gap period of 3 seconds to 5 seconds incremented by 0.5 seconds with the total of 500 packets. The gap period is the DCH demotion timer period considering the variance in the lossy channel. The reason we want to use TCP instead UDP packet is that RLC layer transmit both upper layer packets or SDU (Service Data Unit) in acknowledge mode, and we also want to investigate the latency impact of RLC layer retransmission in both RLC and TCP layers. I will refer the trace as \emph{TCP\_{}Trace}.
+
+\label{sec:expe}
+

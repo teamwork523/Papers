@@ -1,0 +1,56 @@
+This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
+The top-level auxiliary file: paper.aux
+The style file: abbrv.bst
+Database file #1: bib.bib
+Warning--to sort, need author or key in 3gpp.3G
+Warning--to sort, need author or key in 3gpp.LTE
+Warning--to sort, need author or key in qxdm_flyer
+Warning--to sort, need author or key in spec-3G-RRC
+Warning--to sort, need author or key in spec-LTE-RRC
+Warning--to sort, need author or key in spec-3G-RLC
+Warning--to sort, need author or key in bad.sensor
+Warning--to sort, need author or key in internet.radio
+Warning--to sort, need author or key in tunein
+Warning--to sort, need author or key in pandora
+You've used 24 entries,
+            2118 wiz_defined-function locations,
+            710 strings with 9658 characters,
+and the built_in function-call counts, 4750 in all, are:
+= -- 424
+> -- 108
+< -- 0
++ -- 52
+- -- 28
+* -- 177
+:= -- 721
+add.period$ -- 59
+call.type$ -- 24
+change.case$ -- 85
+chr.to.int$ -- 0
+cite$ -- 34
+duplicate$ -- 248
+empty$ -- 573
+format.name$ -- 28
+if$ -- 1074
+int.to.chr$ -- 0
+int.to.str$ -- 24
+missing$ -- 15
+newline$ -- 110
+num.names$ -- 28
+pop$ -- 179
+preamble$ -- 1
+purify$ -- 62
+quote$ -- 0
+skip$ -- 175
+stack$ -- 0
+substring$ -- 120
+swap$ -- 33
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 94
+warning$ -- 10
+while$ -- 28
+width$ -- 26
+write$ -- 210
+(There were 10 warnings)

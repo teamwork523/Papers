@@ -1,0 +1,122 @@
+\begin{thebibliography}{10}
+
+\bibitem{3gpp.3G}
+{3GPP LTE}.
+\newblock \url{http://www.3gpp.org/LTE}.
+
+\bibitem{3gpp.LTE}
+{3GPP UMTS (3G)}.
+\newblock \url{http://www.3gpp.org/UMTS}.
+
+\bibitem{internet.radio}
+{Internet radio becoming more mainstream, survey says}.
+\newblock \url{http://goo.gl/wNs31W}.
+
+\bibitem{pandora}
+{Pandora}.
+\newblock \url{http://www.pandora.com/}.
+
+\bibitem{bad.sensor}
+{The iPhone 5S Motion Sensors Are Totally Screwed Up}.
+\newblock \url{http://goo.gl/UGmN0e}.
+
+\bibitem{tunein}
+{TuneIn}.
+\newblock \url{http://www.tunein.com/}.
+
+\bibitem{qxdm_flyer}
+{QxDM Professional™ QUALCOMM eXtensible Diagnostic Monitor}.
+\newblock \url{http://goo.gl/DOmGz1}, 2012.
+
+\bibitem{spec-3G-RLC}
+{3GPP TS 25.322: Radio Link Control (RLC) - UMTS}, 2013.
+
+\bibitem{spec-3G-RRC}
+{3GPP TS 35.331: Radio Resource Control (RRC) - UMTS}, 2013.
+
+\bibitem{spec-LTE-RRC}
+{3GPP TS 36.331: Radio Resource Control (RRC) - LTE}, 2013.
+
+\bibitem{qoe.predict}
+{A. Balachandran, V. Sekar, A. Akella, S. Seshan, I. Stoica, and H. Zhang.}
+\newblock {Developing a predictive model of quality of experience for internet
+  video.}
+\newblock {\em Proc. ACM SIGCOMM}, 2013.
+
+\bibitem{loadsense}
+{A. Chakraborty, V. Navda, V. N. Padmanabhan, and R. Ramjee}.
+\newblock {Coordinating cellular background transfers using loadsense.}
+\newblock {\em Proc. ACM MobiCom}, 2013.
+
+\bibitem{bartendr}
+{A. Schulman, V. Navda, R. Ramjee, N. Spring, P. Deshpande, C. Grunewald, K.
+  Jain, and V. N. Padmanabhan.}
+\newblock {Bartendr: a practical approach to energy-aware cellular data
+  scheduling.}
+\newblock {\em Proc. ACM MobiCom}, 2010.
+
+\bibitem{qoe.define}
+{A. V. Moorsel}.
+\newblock {Metrics for the internet age: Quality of experience and quality of
+  business.}
+\newblock In {\em {In Fifth International Workshop on Performability Modeling
+  of Computer and Communication Systems}}, 2001.
+
+\bibitem{user.engagement.impact}
+{F. Dobrian, V. Sekar, A. Awan, I. Stoica, D. A. Joseph, A. Ganjam, J. Zhan,
+  and H. Zhang.}
+\newblock {Understanding the impact of video quality on user engagement.}
+\newblock {\em Proc. ACM SIGCOMM}, 2011.
+
+\bibitem{3g_rrc}
+{F. Qian, Z. Wang, A. Gerber, Z. M. Mao, S. Sen, and O. Spatscheck}.
+\newblock {Characterizing Radio Resource Allocation for 3G Networks}.
+\newblock In {\em Proc. ACM IMC}, 2010.
+
+\bibitem{aro}
+{F. Qian, Z. Wang, A. Gerber, Z. M. Mao, S. Sen, and O. Spatscheck}.
+\newblock {Profiling Resource Usage for Mobile Applications: A Cross-layer
+  Approach}.
+\newblock In {\em Proc. ACM MobiSys}, 2011.
+
+\bibitem{umts_book}
+{H. Holma, and A. Toskala}.
+\newblock {\em {WCDMA for UMTS: HSPA Evolution and LTE.}}
+\newblock {John Wiley and Sons, Inc.}, 2007.
+
+\bibitem{bufferbloat}
+{H. Jiang, Y. Wang, K. Lee, and I. Rhee}.
+\newblock {Tackling bufferbloat in 3G/4G networks.}
+\newblock In {\em Proc. ACM IMC}, 2012.
+
+\bibitem{myexperience}
+{J. Froehlich, M. Y. Chen, S. Consolvo, B. Harrison, and J. A. Landay}.
+\newblock {MyExperience: a system for in situ tracing and capturing of user
+  feedback on mobile phones.}
+\newblock In {\em Proc. ACM MobiSys}, 2007.
+
+\bibitem{in-depth}
+{J. Huang, F. Qian, Y. Guo, Y. Zhou, Q. Xu, Z. M. Mao, S. Sen, and O.
+  Spatscheck}.
+\newblock {An in-depth study of LTE: Effect of network protocol and application
+  behavior on performance.}
+\newblock In {\em Proc. ACM SIGCOMM}, 2013.
+
+\bibitem{rilanalyzer}
+{N. Vallina-Rodriguez, A. Auçinas, M. Almeida, Y. Grunenberger, K.
+  Papagiannaki, and J. Crowcroft.}
+\newblock {Rilanalyzer: a comprehensive 3g monitor on your phone.}
+\newblock In {\em Proc. ACM IMC}, 2013.
+
+\bibitem{qoe.application}
+{S. Ickin, K. Wac, M. Fiedler, L. Janowski, J. Hong, and A. K. Dey.}
+\newblock {Factors influencing quality of experience of commonly used mobile
+  applications.}
+\newblock In {\em IEEE Communication Magazine}, 2012.
+
+\bibitem{cross-layer.wireless}
+{V. Srivastava, and M. Motani.}
+\newblock {Cross-layer design: a survey and the road ahead.}
+\newblock In {\em IEEE Communication Magazine}, 2005.
+
+\end{thebibliography}

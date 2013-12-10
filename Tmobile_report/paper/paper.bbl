@@ -1,0 +1,69 @@
+\begin{thebibliography}{10}
+
+\bibitem{tcpdump}
+{tcpdump}.
+\newblock \url{http://www.tcpdump.org/}.
+
+\bibitem{qxdm_flyer}
+{QxDM Professional Proven Diagnostic Tool}.
+\newblock
+  \url{http://www.qualcomm.com/solutions/testing/diagnostics-software/}, 2012.
+
+\bibitem{spec-3G-RLC}
+{3GPP TS 25.322: Radio Link Control (RLC) - UMTS}, 2013.
+
+\bibitem{spec-3G-RRC}
+{3GPP TS 35.331: Radio Resource Control (RRC) - UMTS}, 2013.
+
+\bibitem{snapdragon}
+{Snapdragon (System on Chip)}.
+\newblock \url{http://en.wikipedia.org/wiki/Snapdragon_(system_on_chip)}, 2013.
+
+\bibitem{3g.slow}
+{Why are 3G Networks so Slow?}
+\newblock
+  \url{http://blog.ioshints.info/2013/04/why-are-3g-networks-so-slow.html},
+  2013.
+
+\bibitem{opt.tcp.rlc}
+{Alcaraz, Juan J., Fernando Cerdán, and Joan García-Haro}.
+\newblock {Optimizing TCP and RLC interaction in the UMTS Radio Access
+  Network}.
+\newblock {\em IEEE Network Magazine}, 2006.
+
+\bibitem{3g_rrc}
+{Feng Qian, Zhaoguang Wang, Alexandre Gerber, Z. Morley Mao, and Subhabrata Sen
+  and Oliver Spatscheck}.
+\newblock {Characterizing Radio Resource Allocation for 3G Networks}.
+\newblock In {\em Proc. ACM IMC}, 2010.
+
+\bibitem{aro}
+{Feng Qian, Zhaoguang Wang, Alexandre Gerber, Z. Morley Mao, Subhabrata Sen,
+  and Oliver Spatscheck}.
+\newblock {Profiling Resource Usage for Mobile Applications: A Cross-layer
+  Approach}.
+\newblock In {\em Proc. ACM MobiSys}, 2011.
+
+\bibitem{bufferbloat}
+{Haiqing Jiang, Zeyu Liu, Yaogong Wang, Kyunghan Lee, and Injong Rhee}.
+\newblock {Understanding Bufferbloat in Cellular Networks}.
+\newblock In {\em Proc. of the 2012 ACM SIGCOMM workshop on Cellular networks},
+  2012.
+
+\bibitem{pkt.train}
+{Hu, Ningning, and Peter Steenkiste}.
+\newblock {Evaluation and Characterization of Available Bandwidth Probing
+  Techniques}.
+\newblock {\em IEEE J. Selected Areas in Communications}, 2003.
+
+\bibitem{proteus}
+{Qiang Xu, Sanjeev Mehrotra, Z. Morley Mao, and Jin Li}.
+\newblock {PROTEUS: Network Performance Forecast for Real-Time, Interactive
+  Mobile Applications}.
+\newblock In {\em Proc. ACM MobiSys}, 2013.
+
+\bibitem{tcp.rto}
+{Vern Paxson and Mark Allman }.
+\newblock {Computing TCP’s retransmission timer}, 2000.
+
+\end{thebibliography}

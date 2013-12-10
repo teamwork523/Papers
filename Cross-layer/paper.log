@@ -1,0 +1,910 @@
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.3.14)  10 DEC 2013 10:03
+entering extended mode
+ \write18 enabled.
+ %&-line parsing enabled.
+**paper
+(./paper.tex
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
+yphenation, loaded.
+(./sig-alternate-10pt.cls
+(/usr/share/texmf-texlive/tex/latex/graphics/epsfig.sty
+Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
+
+(/usr/share/texmf-texlive/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-texlive/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texmf-texlive/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-texlive/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/etc/texmf/tex/latex/config/graphics.cfg
+File: graphics.cfg 2009/08/28 v1.8 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(/usr/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2010/03/12 v0.04p Graphics/color for pdfTeX
+\Gread@gobject=\count79
+))
+\Gin@req@height=\dimen102
+\Gin@req@width=\dimen103
+)
+\epsfxsize=\dimen104
+\epsfysize=\dimen105
+)
+(/usr/share/texmf-texlive/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2009/06/22 v3.00
+
+(/usr/share/texmf-texlive/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
+\@emptytoks=\toks15
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
+))
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip41
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texmf-texlive/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks16
+\ex@=\dimen106
+))
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen107
+)
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count80
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count81
+\leftroot@=\count82
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count83
+\DOTSCASE@=\count84
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen108
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count85
+\c@MaxMatrixCols=\count86
+\dotsspace@=\muskip10
+\c@parentequation=\count87
+\dspbrk@lvl=\count88
+\tag@help=\toks17
+\row@=\count89
+\column@=\count90
+\maxfields@=\count91
+\andhelp@=\toks18
+\eqnshift@=\dimen109
+\alignsep@=\dimen110
+\tagshift@=\dimen111
+\tagwidth@=\dimen112
+\totwidth@=\dimen113
+\lineht@=\dimen114
+\@envbody=\toks19
+\multlinegap=\skip42
+\multlinetaggap=\skip43
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+)
+Document Class 'sig-alternate' <3rd January '07>. Hacked by Anja Feldmann
+Based in part upon document Style `acmconf' <22 May 89>. Hacked 4/91 by
+shivers@cs.cmu.edu, 4/93 by theobald@cs.mcgill.ca
+Excerpts were taken from (Journal Style) 'esub2acm.cls'.
+****** Bugs/comments/suggestions/technicalities to Gerry Murray -- murray@hq.ac
+m.org ******
+Questions on the style, SIGS policies, etc. to Adrienne Griscti griscti@acm.org
+
+\footheight=\dimen115
+\@maxsep=\dimen116
+\@dblmaxsep=\dimen117
+\aucount=\count92
+\originalaucount=\count93
+\auwidth=\dimen118
+\auskip=\dimen119
+\auskipcount=\count94
+\auskip=\dimen120
+\allauboxes=\dimen121
+\addauthors=\toks21
+\addauflag=\count95
+\subtitletext=\toks22
+\savesection=\count96
+\sectioncntr=\count97
+\c@figure=\count98
+\c@table=\count99
+\titleboxnotes=\toks23
+\titleboxnoteflag=\count100
+
+LaTeX Warning: You have requested document class `sig-alternate-10pt',
+               but the document class provides `sig-alternate'.
+
+Document Class: sig-alternate 2007/03/01 - V1.9 - based on acmproc.cls V1.3 <No
+v. 30 '99>
+(/usr/share/texmf-texlive/tex/latex/base/latexsym.sty
+Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
+\symlasy=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
+(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 47.
+)
+\@acmtitlebox=\box28
+\titlenotecount=\count101
+\tntoks=\toks24
+\tntokstwo=\toks25
+\tntoksthree=\toks26
+\tntoksfour=\toks27
+\tntoksfive=\toks28
+\catcount=\count102
+\conf=\toks29
+\confinfo=\toks30
+\c@part=\count103
+\c@section=\count104
+\c@subsection=\count105
+\c@subsubsection=\count106
+\c@paragraph=\count107
+
+Using 'Abbrev' bibliography style
+\bibindent=\dimen122
+\colcntr=\count108
+\savebox=\box29
+\copyrtyr=\toks31
+\acmcopyr=\toks32
+\boilerplate=\toks33
+\copyrightetc=\toks34
+) (/usr/share/texmf-texlive/tex/latex/tools/array.sty
+Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen123
+\extrarowheight=\dimen124
+\NC@list=\toks35
+\extratabsurround=\skip44
+\backup@length=\skip45
+)
+(/usr/share/texmf-texlive/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2005/04/14 v1.61803 publication quality tables
+\heavyrulewidth=\dimen125
+\lightrulewidth=\dimen126
+\cmidrulewidth=\dimen127
+\belowrulesep=\dimen128
+\belowbottomsep=\dimen129
+\aboverulesep=\dimen130
+\abovetopsep=\dimen131
+\cmidrulesep=\dimen132
+\cmidrulekern=\dimen133
+\defaultaddspace=\dimen134
+\@cmidla=\count109
+\@cmidlb=\count110
+\@aboverulesep=\dimen135
+\@belowrulesep=\dimen136
+\@thisruleclass=\count111
+\@lastruleclass=\count112
+\@thisrulewidth=\dimen137
+)
+(/usr/share/texmf-texlive/tex/latex/ltxmisc/bold-extra.sty
+Package: bold-extra 2001/11/13 v0.1 Use fonts from cm/mf-extra/bold
+)
+(/usr/share/texmf-texlive/tex/latex/bytefield/bytefield.sty
+Package: bytefield 2005/07/31 v1.2a Network protocol diagrams
+
+(/usr/share/texmf-texlive/tex/latex/tools/calc.sty
+Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count113
+\calc@Bcount=\count114
+\calc@Adimen=\dimen138
+\calc@Bdimen=\dimen139
+\calc@Askip=\skip46
+\calc@Bskip=\skip47
+LaTeX Info: Redefining \setlength on input line 76.
+LaTeX Info: Redefining \addtolength on input line 77.
+\calc@Ccount=\count115
+\calc@Cskip=\skip48
+)
+\bytefield@height=\skip49
+\bytefield@height@increment=\skip50
+\c@bits@wide=\count116
+\entire@bytefield@picture=\box30
+\bitwidth=\skip51
+\byteheight=\skip52
+\units@wide=\skip53
+\units@tall=\skip54
+\units@high=\skip55
+\header@xpos=\skip56
+\c@header@val=\count117
+\c@max@header@val=\count118
+\curlyshrinkage=\skip57
+\curlyspace=\skip58
+\labelspace=\skip59
+\curly@box=\box31
+\wordlabelr@start=\skip60
+\wordlabelr@end=\skip61
+\wordlabell@start=\skip62
+\wordlabell@end=\skip63
+\total@lbox@width=\skip64
+\label@box@width=\skip65
+\label@box@height=\skip66
+\word@label@box=\box32
+)
+(/usr/share/texmf-texlive/tex/latex/caption/caption.sty
+Package: caption 2009/10/09 v3.1k Customizing captions (AR)
+
+(/usr/share/texmf-texlive/tex/latex/caption/caption3.sty
+Package: caption3 2009/10/09 v3.1k caption3 kernel (AR)
+\captionmargin=\dimen140
+\captionmargin@=\dimen141
+\captionwidth=\dimen142
+\caption@indent=\dimen143
+\caption@parindent=\dimen144
+\caption@hangindent=\dimen145
+\abovecaptionskip=\skip67
+\belowcaptionskip=\skip68
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used on input line 1068.
+)
+
+Package caption Warning: Unsupported document class (or package) detected,
+(caption)                usage of the caption package is not recommended.
+See the caption package documentation for explanation.
+
+Package caption Info: \@makecaption = \long macro:#1#2-> \vskip 10pt \setbox \@
+tempboxa \hbox {\textbf {#1: #2}} \ifdim \wd \@tempboxa >\hsize \textbf {#1: #2
+}\par \else \hbox to\hsize {\hfil \box \@tempboxa \hfil } \fi .
+\c@ContinuedFloat=\count119
+) (/usr/share/texmf-texlive/tex/latex/graphics/color.sty
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+(/etc/texmf/tex/latex/config/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 130.
+)
+(/usr/share/texmf-texlive/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2001/02/13 v0.1j Color table columns (DPC)
+\everycr=\toks36
+\minrowclearance=\skip69
+)
+(/usr/share/texmf-texlive/tex/latex/comment/comment.sty
+\CommentStream=\write3
+
+Excluding comment 'comment')
+(/usr/share/texmf-texlive/tex/latex/ltxmisc/endnotes.sty
+\c@endnote=\count120
+\endnotesep=\dimen146
+\@enotes=\write4
+)
+(/usr/share/texmf-texlive/tex/latex/was/gensymb.sty
+Package: gensymb 2003/07/02 v1.0 (WaS)
+)
+(/usr/share/texmf-texlive/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2009/10/09 v6.79a Hypertext links for LaTeX
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2009/04/10 v2.0 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in pdf mode detected.
+)
+(/usr/share/texmf-texlive/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2008/11/04 v1.4 Switches for detecting VTeX and its modes (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(/usr/share/texmf-texlive/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2009/01/23 v0.5 Provides ifxetex conditional
+)
+(/usr/share/texmf-texlive/tex/latex/oberdiek/hycolor.sty
+Package: hycolor 2009/10/02 v1.5 Code for color options of hyperref/bookmark (H
+O)
+
+(/usr/share/texmf-texlive/tex/latex/oberdiek/xcolor-patch.sty
+Package: xcolor-patch 2009/10/02 xcolor patch
+))
+\@linkdim=\dimen147
+\Hy@linkcounter=\count121
+\Hy@pagecounter=\count122
+
+(/usr/share/texmf-texlive/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2009/10/09 v6.79a Hyperref: PDFDocEncoding definition (HO)
+)
+(/usr/share/texmf-texlive/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2007/12/12 v1.2 Prefix for e-TeX command names (HO)
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2007/09/09 v1.2 Providing info/warning/message (HO)
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)
+
+Package hyperref Warning: Height of page (\paperheight) is invalid (0.0pt),
+(hyperref)                using 11in.
+
+(/usr/share/texmf-texlive/tex/latex/latexconfig/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+(/usr/share/texmf-texlive/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2009/08/13 v3.4 Keyval support for LaTeX options (HO)
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2009/07/30 v1.5 Key value parser with default handler suppor
+t (HO)
+))
+Package hyperref Info: Hyper figures OFF on input line 2975.
+Package hyperref Info: Link nesting OFF on input line 2980.
+Package hyperref Info: Hyper index ON on input line 2983.
+Package hyperref Info: Plain pages OFF on input line 2990.
+Package hyperref Info: Backreferencing OFF on input line 2995.
+
+Implicit mode ON; LaTeX internals redefined
+Package hyperref Info: Bookmarks ON on input line 3191.
+(/usr/share/texmf-texlive/tex/latex/ltxmisc/url.sty
+\Urlmuskip=\muskip11
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 3428.
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/bitset.sty
+Package: bitset 2007/09/28 v1.0 Data type bit set (HO)
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/intcalc.sty
+Package: intcalc 2007/09/27 v1.1 Expandable integer calculations (HO)
+)
+(/usr/share/texmf-texlive/tex/generic/oberdiek/bigintcalc.sty
+Package: bigintcalc 2007/11/11 v1.1 Expandable big integer calculations (HO)
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2009/09/23 v0.6 LuaTeX support for pdfTeX utility functions
+ (HO)
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2009/04/17 v1.2 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/share/texmf-texlive/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2009/08/05 v1.0 Some LaTeX kernel commands for general use (HO
+)
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+)))
+\Fld@menulength=\count123
+\Field@Width=\dimen148
+\Fld@charsize=\dimen149
+\Field@toks=\toks37
+Package hyperref Info: Hyper figures OFF on input line 4377.
+Package hyperref Info: Link nesting OFF on input line 4382.
+Package hyperref Info: Hyper index ON on input line 4385.
+Package hyperref Info: backreferencing OFF on input line 4392.
+Package hyperref Info: Link coloring OFF on input line 4397.
+Package hyperref Info: Link coloring with OCG OFF on input line 4402.
+Package hyperref Info: PDF/A mode OFF on input line 4407.
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/atbegshi.sty
+Package: atbegshi 2008/07/31 v1.9 At begin shipout hook (HO)
+)
+\Hy@abspage=\count124
+\c@Item=\count125
+\c@Hfootnote=\count126
+)
+*hyperref using default driver hpdftex*
+(/usr/share/texmf-texlive/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2009/10/09 v6.79a Hyperref driver for pdfTeX
+\Fld@listcount=\count127
+)
+(/usr/share/texmf-texlive/tex/latex/listings/listings.sty
+\lst@mode=\count128
+\lst@gtempboxa=\box33
+\lst@token=\toks38
+\lst@length=\count129
+\lst@currlwidth=\dimen150
+\lst@column=\count130
+\lst@pos=\count131
+\lst@lostspace=\dimen151
+\lst@width=\dimen152
+\lst@newlines=\count132
+\lst@lineno=\count133
+\lst@maxwidth=\dimen153
+
+(/usr/share/texmf-texlive/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
+\c@lstnumber=\count134
+\lst@skipnumbers=\count135
+\lst@framebox=\box34
+)
+(/usr/share/texmf-texlive/tex/latex/listings/listings.cfg
+File: listings.cfg 2007/02/22 1.4 listings configuration
+))
+Package: listings 2007/02/22 1.4 (Carsten Heinz)
+
+(/usr/share/texmf-texlive/tex/latex/mh/mathtools.sty
+Package: mathtools 2008/08/01 v1.06 mathematical typesetting tools (MH)
+
+(/usr/share/texmf-texlive/tex/latex/mh/mhsetup.sty
+Package: mhsetup 2007/12/03 v1.2 programming setup (MH)
+)
+\g_MT_multlinerow_int=\count136
+\l_MT_multwidth_dim=\dimen154
+)
+(/usr/share/texmf-texlive/tex/latex/multirow/multirow.sty
+\bigstrutjot=\dimen155
+)
+(/usr/share/texmf-texlive/tex/generic/genmisc/nth.sty
+Package: nth 2002/02/27
+)
+(/usr/share/texmf-texlive/tex/latex/rotating/rotating.sty
+Package: rotating 2009/03/28 v2.16a rotated objects in LaTeX
+
+(/usr/share/texmf-texlive/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\c@r@tfl@t=\count137
+\rotFPtop=\skip70
+\rotFPbot=\skip71
+\rot@float@box=\box35
+\rot@mess@toks=\toks39
+)
+(/usr/share/texmf-texlive/tex/latex/soul/soul.sty
+Package: soul 2003/11/17 v2.4 letterspacing/underlining (mf)
+\SOUL@word=\toks40
+\SOUL@lasttoken=\toks41
+\SOUL@cmds=\toks42
+\SOUL@buffer=\toks43
+\SOUL@token=\toks44
+\SOUL@spaceskip=\skip72
+\SOUL@ttwidth=\dimen156
+\SOUL@uldp=\dimen157
+\SOUL@ulht=\dimen158
+)
+(/usr/share/texmf-texlive/tex/latex/caption/subcaption.sty
+Package: subcaption 2008/08/31 v1.0b Adding subcaptions (AR)
+\c@subfigure=\count138
+\c@subtable=\count139
+)
+(/usr/share/texmf-texlive/tex/latex/svninfo/svninfo.sty
+Package: svninfo 2008/08/09 v0.7.3
+\@svnInfoDay=\count140
+\@svnInfoMonth=\count141
+\@svnInfoYear=\count142
+
+(/usr/share/texmf-texlive/tex/latex/svninfo/svninfo.cfg))
+(/usr/share/texmf-texlive/tex/latex/tools/tabularx.sty
+Package: tabularx 1999/01/07 v2.07 `tabularx' package (DPC)
+\TX@col@width=\dimen159
+\TX@old@table=\dimen160
+\TX@old@col=\dimen161
+\TX@target=\dimen162
+\TX@delta=\dimen163
+\TX@cols=\count143
+\TX@ftn=\toks45
+)
+(/usr/share/texmf-texlive/tex/latex/ltxmisc/threeparttable.sty
+Package: threeparttable 2003/06/13  v 3.0
+\@tempboxb=\box36
+)
+(/usr/share/texmf-texlive/tex/latex/units/units.sty
+Package: units 1998/08/04 v0.9b Typesetting units
+
+(/usr/share/texmf-texlive/tex/latex/units/nicefrac.sty
+Package: nicefrac 1998/08/04 v0.9b Nice fractions
+\L@UnitsRaiseDisplaystyle=\skip73
+\L@UnitsRaiseTextstyle=\skip74
+\L@UnitsRaiseScriptstyle=\skip75
+))
+(/usr/share/texmf-texlive/tex/latex/tools/xspace.sty
+Package: xspace 2006/05/08 v1.12 Space after command names (DPC,MH)
+)
+(/usr/share/texmf-texlive/tex/latex/oberdiek/epstopdf.sty
+Package: epstopdf 2009/10/17 v2.4 Conversion with epstopdf on the fly (HO)
+
+(/usr/share/texmf-texlive/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2009/10/17 v2.4 Base part for package epstopdf
+
+(/usr/share/texmf-texlive/tex/latex/oberdiek/grfext.sty
+Package: grfext 2007/09/30 v1.0 Managing graphics extensions (HO)
+)
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 433.
+
+(/usr/share/texmf-texlive/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2009/10/26 v1.1 Configuration of epstopdf for TeX Live
+)))
+(/usr/share/texmf-texlive/tex/latex/algorithms/algorithmic.sty
+Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
+\c@ALC@unique=\count144
+\c@ALC@line=\count145
+\c@ALC@rem=\count146
+\c@ALC@depth=\count147
+\ALC@tlm=\skip76
+\algorithmicindent=\skip77
+)
+(/usr/share/texmf-texlive/tex/latex/algorithms/algorithm.sty
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
+
+(/usr/share/texmf-texlive/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count148
+\float@exts=\toks46
+\float@box=\box37
+\@float@everytoks=\toks47
+\@floatcapt=\box38
+)
+\@float@every@algorithm=\toks48
+\c@algorithm=\count149
+)
+(/usr/share/texmf-texlive/tex/latex/ltxmisc/capt-of.sty)
+(/usr/share/texmf-texlive/tex/latex/psnfss/times.sty
+Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
+)
+(/usr/share/texmf-texlive/tex/latex/ltxmisc/ulem.sty
+\UL@box=\box39
+\UL@hyphenbox=\box40
+\UL@skip=\skip78
+\UL@hook=\toks49
+\UL@pe=\count150
+\UL@pixel=\dimen164
+\ULC@box=\box41
+Package: ulem 2000/05/26
+\ULdepth=\dimen165
+)
+(/usr/share/texmf-texlive/tex/latex/wasysym/wasysym.sty
+Package: wasysym 2003/10/30 v2.0 Wasy-2 symbol support package
+\symwasy=\mathgroup7
+LaTeX Font Info:    Overwriting symbol font `wasy' in version `bold'
+(Font)                  U/wasy/m/n --> U/wasy/b/n on input line 90.
+)
+(/usr/share/texmf-texlive/tex/latex/psnfss/pifont.sty
+Package: pifont 2005/04/12 PSNFSS-v9.2a Pi font support (SPQR) 
+LaTeX Font Info:    Try loading font information for U+pzd on input line 63.
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/upzd.fd
+File: upzd.fd 2001/06/04 font definitions for U/pzd.
+)
+LaTeX Font Info:    Try loading font information for U+psy on input line 64.
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/upsy.fd
+File: upsy.fd 2001/06/04 font definitions for U/psy.
+))
+\c@copyrightbox=\count151
+\SUBSIZE=\skip79
+ (./paper.aux)
+\openout1 = `paper.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 130.
+
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+(/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count152
+\scratchdimen=\dimen166
+\scratchbox=\box42
+\nofMPsegments=\count153
+\nofMParguments=\count154
+\everyMPshowfont=\toks50
+\MPscratchCnt=\count155
+\MPscratchDim=\dimen167
+\MPnumerator=\count156
+\everyMPtoPDFconversion=\toks51
+)
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
+Package caption Info: hyperref package is loaded.
+Package caption Info: listings package is loaded.
+Package caption Info: rotating package is loaded.
+Package caption Info: threeparttable package is loaded.
+\c@subcopyrightbox=\count157
+Package caption Info: End \AtBeginDocument code.
+LaTeX Info: Redefining \celsius on input line 130.
+Package gensymb Info: Faking symbols for \degree and \celsius on input line 130
+.
+
+
+Package gensymb Warning: Not defining \perthousand.
+
+LaTeX Info: Redefining \ohm on input line 130.
+Package gensymb Info: Using \Omega for \ohm on input line 130.
+
+Package gensymb Warning: Not defining \micro.
+
+Package hyperref Info: Link coloring OFF on input line 130.
+(/usr/share/texmf-texlive/tex/latex/hyperref/nameref.sty
+Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
+
+(/usr/share/texmf-texlive/tex/latex/oberdiek/refcount.sty
+Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
+)
+\c@section@level=\count158
+)
+LaTeX Info: Redefining \ref on input line 130.
+LaTeX Info: Redefining \pageref on input line 130.
+ (./paper.out)
+(./paper.out)
+\@outlinefile=\write5
+\openout5 = `paper.out'.
+
+\AtBeginShipoutBox=\box43
+\c@lstlisting=\count159
+LaTeX Font Info:    Try loading font information for U+msa on input line 152.
+ (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2009/06/22 v3.00 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 152.
+
+(/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+)
+LaTeX Font Info:    Try loading font information for U+lasy on input line 152.
+
+(/usr/share/texmf-texlive/tex/latex/base/ulasy.fd
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+)
+LaTeX Font Info:    Try loading font information for U+wasy on input line 152.
+
+(/usr/share/texmf-texlive/tex/latex/wasysym/uwasy.fd
+File: uwasy.fd 2003/10/30 v2.0 Wasy-2 symbol font definitions
+) (./abstract.tex)
+Overfull \hbox (7.21782pt too wide) in paragraph at lines 159--160
+\OT1/ptm/m/n/10 LTE, WCDMA, RRC, RLC, Cross-layer Anal-y-sis, Root Cause
+ []
+
+(./intro.tex
+Package epstopdf Info: Source file: <figs/transLayer_overview.eps>
+(epstopdf)                    date: 2013-12-09 13:58:17
+(epstopdf)                    size: 311510 bytes
+(epstopdf)             Output file: <figs/transLayer_overview-eps-converted-to.
+pdf>
+(epstopdf)                    date: 2013-12-09 15:29:21
+(epstopdf)                    size: 19659 bytes
+(epstopdf)             Command: <epstopdf --outfile=figs/transLayer_overview-ep
+s-converted-to.pdf figs/transLayer_overview.eps>
+(epstopdf)             \includegraphics on input line 11.
+Package epstopdf Info: Output file is already uptodate.
+
+<figs/transLayer_overview-eps-converted-to.pdf, id=137, 383.4325pt x 278.03876p
+t>
+File: figs/transLayer_overview-eps-converted-to.pdf Graphic file (type pdf)
+ <use figs/transLayer_overview-eps-converted-to.pdf>
+Overfull \hbox (12.0pt too wide) in paragraph at lines 11--12
+ [][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+
+
+]
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 28.
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 28.
+) (./background.tex
+Overfull \hbox (1.1276pt too wide) in paragraph at lines 28--1
+\OT1/ptm/m/n/10 high-lights the po-ten-tial chal-lenges in de-vel-op-ing \OT1/p
+tm/m/it/10 TransLayer\OT1/ptm/m/n/10 .
+ []
+
+Package epstopdf Info: Source file: <figs/cellular_network_topology.eps>
+(epstopdf)                    date: 2013-12-02 22:45:47
+(epstopdf)                    size: 393037 bytes
+(epstopdf)             Output file: <figs/cellular_network_topology-eps-convert
+ed-to.pdf>
+(epstopdf)                    date: 2013-12-02 22:52:54
+(epstopdf)                    size: 40779 bytes
+(epstopdf)             Command: <epstopdf --outfile=figs/cellular_network_topol
+ogy-eps-converted-to.pdf figs/cellular_network_topology.eps>
+(epstopdf)             \includegraphics on input line 6.
+Package epstopdf Info: Output file is already uptodate.
+
+<figs/cellular_network_topology-eps-converted-to.pdf, id=170, 728.7225pt x 289.
+08pt>
+File: figs/cellular_network_topology-eps-converted-to.pdf Graphic file (type pd
+f)
+ <use figs/cellular_network_topology-eps-converted-to.pdf>
+Overfull \hbox (12.0pt too wide) in paragraph at lines 6--7
+ [][] 
+ []
+
+<figs/RRC_State_Diagram.pdf, id=175, 375.4025pt x 412.54124pt>
+File: figs/RRC_State_Diagram.pdf Graphic file (type pdf)
+
+<use figs/RRC_State_Diagram.pdf>
+Overfull \hbox (12.0pt too wide) in paragraph at lines 17--18
+ [][] 
+ []
+
+[2 <./figs/transLayer_overview-eps-converted-to.pdf> <./figs/cellular_network_t
+opology-eps-converted-to.pdf> <./figs/RRC_State_Diagram.pdf>]
+Overfull \hbox (3.35767pt too wide) in paragraph at lines 26--27
+\OT1/ptm/m/n/10 cerned mainly with tran-si-tions be-tween RRC[]CONNECTED,
+ []
+
+Package epstopdf Info: Source file: <figs/RLC_group_ack.eps>
+(epstopdf)                    date: 2013-12-02 23:27:00
+(epstopdf)                    size: 321488 bytes
+(epstopdf)             Output file: <figs/RLC_group_ack-eps-converted-to.pdf>
+(epstopdf)                    date: 2013-12-03 00:31:36
+(epstopdf)                    size: 24370 bytes
+(epstopdf)             Command: <epstopdf --outfile=figs/RLC_group_ack-eps-conv
+erted-to.pdf figs/RLC_group_ack.eps>
+(epstopdf)             \includegraphics on input line 32.
+Package epstopdf Info: Output file is already uptodate.
+<figs/RLC_group_ack-eps-converted-to.pdf, id=219, 253.94875pt x 250.9375pt>
+File: figs/RLC_group_ack-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figs/RLC_group_ack-eps-converted-to.pdf>
+Overfull \hbox (12.0pt too wide) in paragraph at lines 32--33
+ [][] 
+ []
+
+) (./challenge.tex [3 <./figs/RLC_group_ack-eps-converted-to.pdf>])
+(./crossAnalysis.tex
+Underfull \hbox (badness 2111) in paragraph at lines 29--29
+[]|\OT1/ptm/m/n/10 WCDMA RLC up-link ac-knowl-edge
+ []
+
+
+Underfull \hbox (badness 2111) in paragraph at lines 29--29
+[]|\OT1/ptm/m/n/10 WCDMA RLC up-link ac-knowl-edge
+ []
+
+
+Overfull \hbox (1.91785pt too wide) in paragraph at lines 29--30
+[][] 
+ []
+
+Package epstopdf Info: Source file: <figs/cross_layer_mapping.eps>
+(epstopdf)                    date: 2013-12-04 10:43:57
+(epstopdf)                    size: 403269 bytes
+(epstopdf)             Output file: <figs/cross_layer_mapping-eps-converted-to.
+pdf>
+(epstopdf)                    date: 2013-12-04 10:44:30
+(epstopdf)                    size: 25042 bytes
+(epstopdf)             Command: <epstopdf --outfile=figs/cross_layer_mapping-ep
+s-converted-to.pdf figs/cross_layer_mapping.eps>
+(epstopdf)             \includegraphics on input line 41.
+Package epstopdf Info: Output file is already uptodate.
+<figs/cross_layer_mapping-eps-converted-to.pdf, id=248, 389.455pt x 184.69pt>
+File: figs/cross_layer_mapping-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figs/cross_layer_mapping-eps-converted-to.pdf>
+Overfull \hbox (12.0pt too wide) in paragraph at lines 41--42
+ [][] 
+ []
+
+
+Underfull \vbox (badness 1960) has occurred while \output is active []
+
+ [4]
+Underfull \vbox (badness 1337) has occurred while \output is active []
+
+
+Overfull \hbox (1.91785pt too wide) in paragraph at lines 70--71
+[][] 
+ []
+
+[5 <./figs/cross_layer_mapping-eps-converted-to.pdf>]) (./feedback.tex)
+(./eval.tex <figs/rrc_inference_result.jpg, id=294, 361.35pt x 361.35pt>
+File: figs/rrc_inference_result.jpg Graphic file (type jpg)
+
+<use figs/rrc_inference_result.jpg>
+Overfull \hbox (12.0pt too wide) in paragraph at lines 14--15
+ [][] 
+ []
+
+[6]
+Package epstopdf Info: Source file: <figs/normalized_transmission_delay.eps>
+(epstopdf)                    date: 2013-12-09 21:55:08
+(epstopdf)                    size: 22318 bytes
+(epstopdf)             Output file: <figs/normalized_transmission_delay-eps-con
+verted-to.pdf>
+(epstopdf)                    date: 2013-12-09 22:02:27
+(epstopdf)                    size: 8117 bytes
+(epstopdf)             Command: <epstopdf --outfile=figs/normalized_transmissio
+n_delay-eps-converted-to.pdf figs/normalized_transmission_delay.eps>
+(epstopdf)             \includegraphics on input line 23.
+Package epstopdf Info: Output file is already uptodate.
+
+<figs/normalized_transmission_delay-eps-converted-to.pdf, id=304, 361.35pt x 25
+2.945pt>
+File: figs/normalized_transmission_delay-eps-converted-to.pdf Graphic file (typ
+e pdf)
+ <use figs/normalized_transmission_delay-eps-converted-to.pdf>
+Overfull \hbox (12.0pt too wide) in paragraph at lines 23--24
+ [][] 
+ []
+
+
+<figs/root_cause_rrc_message_blocking.png, id=305, 1110.39844pt x 679.03688pt>
+File: figs/root_cause_rrc_message_blocking.png Graphic file (type png)
+
+<use figs/root_cause_rrc_message_blocking.png>
+Overfull \hbox (12.0pt too wide) in paragraph at lines 30--31
+ [][] 
+ []
+
+) (./future.tex) (./related.tex [7 <./figs/rrc_inference_result.jpg> <./figs/no
+rmalized_transmission_delay-eps-converted-to.pdf> <./figs/root_cause_rrc_messag
+e_blocking.png (PNG copy)>]
+Missing character: There is no Ô in font ptmr7t!
+Missing character: There is no ¨ in font ptmr7t!
+Missing character: There is no Å in font ptmr7t!
+) (./conc.tex) (./ack.tex) (./paper.bbl
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 5.
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ñ in font ptmr7t!
+Missing character: There is no ¢ in font ptmr7t!
+ [8]
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ß in font ptmr7t!
+) [9
+
+] (./paper.aux) ) 
+Here is how much of TeX's memory you used:
+ 9690 strings out of 495061
+ 141529 string characters out of 1182621
+ 235597 words of memory out of 3000000
+ 12496 multiletter control sequences out of 15000+50000
+ 45137 words of font info for 61 fonts, out of 3000000 for 9000
+ 28 hyphenation exceptions out of 8191
+ 39i,11n,39p,1442b,386s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/sh
+are/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-te
+xlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts
+/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-texlive/fonts/type1/urw/c
+ourier/ucrr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/helvetic/uhvb8a.pfb
+></usr/share/texmf-texlive/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texm
+f-texlive/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-texlive/fonts/type
+1/urw/times/utmr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmri8a.
+pfb>
+Output written on paper.pdf (9 pages, 608832 bytes).
+PDF statistics:
+ 409 PDF objects out of 1000 (max. 8388607)
+ 78 named destinations out of 1000 (max. 500000)
+ 289 words of extra memory for PDF output out of 10000 (max. 10000000)
+

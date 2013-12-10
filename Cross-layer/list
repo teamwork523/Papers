@@ -1,0 +1,106 @@
+debiandoc-sgml - DebianDoc SGML DTD and formatting tools
+luatex - next generation TeX engine
+texlive - TeX Live: A decent selection of the TeX Live packages
+texlive-base - TeX Live: Essential programs and files
+texlive-bibtex-extra - TeX Live: Extra BibTeX styles
+texlive-binaries - Binaries for TeX Live
+texlive-common - TeX Live: Base component
+texlive-doc-base - TeX Live: TeX Live documentation
+texlive-doc-bg - TeX Live: Bulgarian documentation
+texlive-doc-cs+sk - TeX Live: Czech/Slovak documentation
+texlive-doc-de - TeX Live: German documentation
+texlive-doc-en - TeX Live: English documentation
+texlive-doc-es - TeX Live: Spanish documentation
+texlive-doc-fi - TeX Live: Finnish documentation
+texlive-doc-fr - TeX Live: French documentation
+texlive-doc-it - TeX Live: Italian documentation
+texlive-doc-ja - TeX Live: Japanese documentation
+texlive-doc-ko - TeX Live: Korean documentation
+texlive-doc-mn - TeX Live: Mongolian documentation
+texlive-doc-nl - TeX Live: Dutch documentation
+texlive-doc-pl - TeX Live: Polish documentation
+texlive-doc-pt - TeX Live: Portuguese documentation
+texlive-doc-ru - TeX Live: Russian documentation
+texlive-doc-si - TeX Live: Slovenian documentation
+texlive-doc-th - TeX Live: Thai documentation
+texlive-doc-tr - TeX Live: Turkish documentation
+texlive-doc-uk - TeX Live: Ukrainian documentation
+texlive-doc-vi - TeX Live: Vietnamese documentation
+texlive-doc-zh - TeX Live: Chinese documentation
+texlive-extra-utils - TeX Live: TeX auxiliary programs
+texlive-font-utils - TeX Live: TeX and Outline font utilities
+texlive-fonts-extra - TeX Live: Extra fonts
+texlive-fonts-extra-doc - TeX Live: Documentation files for texlive-fonts-extra
+texlive-fonts-recommended - TeX Live: Recommended fonts
+texlive-fonts-recommended-doc - TeX Live: Documentation files for texlive-fonts-recommended
+texlive-generic-recommended - TeX Live: Recommended generic packages
+texlive-humanities-doc - TeX Live: Documentation files for texlive-humanities
+texlive-lang-african - TeX Live: African scripts
+texlive-lang-all - TeX Live: metapackage depending on all TeX Live language packages
+texlive-lang-arabic - TeX Live: Arabic
+texlive-lang-armenian - TeX Live: Armenian
+texlive-lang-croatian - TeX Live: Croatian
+texlive-lang-cyrillic - TeX Live: Cyrillic
+texlive-lang-czechslovak - TeX Live: Czech/Slovak
+texlive-lang-danish - TeX Live: Danish
+texlive-lang-dutch - TeX Live: Dutch
+texlive-lang-finnish - TeX Live: Finnish
+texlive-lang-french - TeX Live: French
+texlive-lang-german - TeX Live: German
+texlive-lang-greek - TeX Live: Greek
+texlive-lang-hebrew - TeX Live: Hebrew
+texlive-lang-hungarian - TeX Live: Hungarian
+texlive-lang-indic - TeX Live: Indic scripts
+texlive-lang-italian - TeX Live: Italian
+texlive-lang-latin - TeX Live: Latin
+texlive-lang-latvian - TeX Live: Latvian
+texlive-lang-lithuanian - TeX Live: Lithuanian
+texlive-lang-mongolian - TeX Live: Mongolian
+texlive-lang-norwegian - TeX Live: Norwegian
+texlive-lang-other - TeX Live: Other hyphenation files
+texlive-lang-polish - TeX Live: Polish
+texlive-lang-portuguese - TeX Live: Portuguese
+texlive-lang-spanish - TeX Live: Spanish
+texlive-lang-swedish - TeX Live: Swedish
+texlive-lang-tibetan - TeX Live: Tibetan
+texlive-lang-ukenglish - TeX Live: UK English
+texlive-lang-vietnamese - TeX Live: Vietnamese
+texlive-latex-base - TeX Live: Basic LaTeX packages
+texlive-latex-base-doc - TeX Live: Documentation files for texlive-latex-base
+texlive-latex-extra - TeX Live: LaTeX supplementary packages
+texlive-latex-extra-doc - TeX Live: Documentation files for texlive-latex-extra
+texlive-latex-recommended - TeX Live: LaTeX recommended packages
+texlive-latex-recommended-doc - TeX Live: Documentation files for texlive-latex-recommended
+texlive-luatex - TeX Live: LuaTeX packages
+texlive-math-extra - TeX Live: Advanced math typesetting
+texlive-metapost-doc - TeX Live: Documentation files for texlive-metapost
+texlive-pictures - TeX Live: Graphics packages and programs
+texlive-pictures-doc - TeX Live: Documentation files for texlive-pictures
+texlive-pstricks - TeX Live: PSTricks packages
+texlive-pstricks-doc - TeX Live: Documentation files for texlive-pstricks
+texlive-publishers - TeX Live: Support for publishers, theses, standards, conferences, etc.
+texlive-publishers-doc - TeX Live: Documentation files for texlive-publishers
+texlive-science - TeX Live: Typesetting for natural and computer sciences
+texlive-science-doc - TeX Live: Documentation files for texlive-science
+context - powerful TeX format
+feynmf - set of LaTeX macros for creating Feynman diagrams
+html2ps - HTML to PostScript converter
+ipe - drawing editor for creating figures in PDF or PS formats
+itrans-fonts - Extra fonts used in the ITRANS Indic text processing system
+lyx - document processor
+pandoc - general markup converter
+tachyon-doc - documentation for Tachyon ray tracer
+texlive-formats-extra - TeX Live: Extra formats
+texlive-full - TeX Live: metapackage pulling in all components of TeX Live
+texlive-games - TeX Live: Games typesetting
+texlive-generic-extra - TeX Live: Extra generic packages
+texlive-humanities - TeX Live: Humanities packages
+texlive-latex3 - TeX Live: LaTeX3 packages
+texlive-metapost - TeX Live: MetaPost (and Metafont) drawing packages
+texlive-music - TeX Live: Music typesetting
+texlive-omega - TeX Live: Omega
+texlive-plain-extra - TeX Live: Plain TeX supplementary packages
+texlive-xetex - TeX Live: XeTeX packages
+therion - Cave surveying - 2D and 3D drawing software
+tth-common - Scripts common to tth and ttm
+wv - Programs for accessing Microsoft Word documents

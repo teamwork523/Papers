@@ -1,0 +1,20 @@
+\section{Challenges}
+\label{sec:challenge}
+
+QxDM is essentially a real-time monitoring tool that connect the device with a PC (requires a USB authentication dongle). Each message or event from different layers is stored using a single log entry that has consistent format. All the analysis process is offline after we exported the filtered log information from QCAT (QualComm Analysis Tool). The first step of building cross-layer mapping of \textit{TransLayer} is to parse the trace and extract meaningful information from each log entry. Unfortunately, due to the defects of the QxDM design, incomplete RLC PDU information, loose RLC RTT estimation, and unnecessary IP packet fragmentation and duplication should be taken into consideration. For the real-time user feedback part, the most challenging component is to accurately record all the user feedback and minimize the number of incorrect signals.
+
+\subsection{Incomplete RLC PDU Logging}
+\label{subsec:partial.logging}
+Due to a bad design decision, QxDM merely provides the first four bytes information in the RLC PDU for both uplink and downlink in 3G (only two bytes in LTE). Since the first two bytes PDU is constantly reserved as header, i.e. sequence number, PDU type (control PDU or data PDU), and etc, we only have two types as payload for IP packet mapping. This leads to potential unsuccessful cross-layer mapping. We provide some degree of confidence on the accuracy of mapping using uniqueness analysis ~\ref{subsec:uniqueness.analysis}, which will be covered later.
+
+\subsection{Loose RLC RTT Estimation}
+\label{subsec:loose.rlc.rtt.estimation}
+In TCP, we could easily calculate the RTT (Round Trip Time) for each data packet, because each packet will be received an ACK (acknowledgement) packet except for packet loss. However, as we talked about in the \S~\ref{subsec:background.rlc}, RLC layer uses \textit{group acknowledgement} which implies not every RLC PDU could get ACK feedback from the receiver. RTT information in the lower layer is more coarse-grained compared with that of transport layer. In the future root cause analysis, we always estimate the lower layer RTT using the nearest available polling request PDU's RTT value.
+
+\subsection{IP Fragmentation and Duplication}
+\label{subsec:ip.frag.and.dup}
+Although packets will be fragmented in the RLC layer because of the protocol, QxDM surprisingly breaks IP packets into units of 256 bytes without a reason. It turns out that such unnecessary fragmentation brings lots of trouble on cross-layer mapping accuracy. Another issue with IP packets is the duplication. That comes from the same IP packet payload logging twice but from different interfaces, even though you enforce the interface to be set as one of them. Therefore, pre-processing on IP log entries is quite necessary, and we evaluate the accuracy improvement to be \textit{15.24\%} in our standard \emph{Browsing Dataset} from \S~\ref{subsec:dataset}.
+
+\subsection{Feedback Tool}
+\label{subsec:challenge.feedback}
+The smartphone is a very compact device that allows multiple ways for user to input their requests. However, many of the input components are well defined. Simple functionality overwrite will lead to block the normal user queries. If we create complicated input mechanism, then we might not capture all the user feedback signals. Selecting the proper interface to allow user provide feedback becomes the most challenging part of the design.

@@ -1,0 +1,148 @@
+\begin{thebibliography}{10}
+
+\bibitem{3gpp.3G}
+{3GPP LTE}.
+\newblock \url{http://www.3gpp.org/LTE}.
+
+\bibitem{3gpp.lte}
+{3GPP UMTS (3G)}.
+\newblock \url{http://www.3gpp.org/UMTS}.
+
+\bibitem{mobiperf}
+{MobiPerf}.
+\newblock \url{http://mobiperf.com}.
+
+\bibitem{tcpdump}
+{tcpdump}.
+\newblock \url{http://www.tcpdump.org/}.
+
+\bibitem{fast_dormancy}
+{Configuration of fast dormancy in release 8. 3GPP discussion and decision
+  notes RP-090960}, 2009.
+
+\bibitem{jamlogger}
+{NU JamLogger: A Study of User Activity and System Performance on Mobile
+  Architectures}.
+\newblock \url{http://www.ece.northwestern.edu/microarchitecture/jamlogger/},
+  2009.
+
+\bibitem{qxdm_flyer}
+{QxDM Professional Proven Diagnostic Tool for Evaluating Handset and Network
+  Performance}.
+\newblock
+  \url{http://www.qualcomm.com/media/documents/files/qxdm-professional-qualcom%
+m-extensible-diagnostic-monitor.pdf}, 2012.
+
+\bibitem{spec-3G-RLC}
+{3GPP TS 25.322: Radio Link Control (RLC) - UMTS}, 2013.
+
+\bibitem{spec-3G-RRC}
+{3GPP TS 35.331: Radio Resource Control (RRC) - UMTS}, 2013.
+
+\bibitem{spec-LTE-RRC}
+{3GPP TS 36.331: Radio Resource Control (RRC) - LTE}, 2013.
+
+\bibitem{snapdragon}
+{Snapdragon (System on Chip)}.
+\newblock \url{http://en.wikipedia.org/wiki/Snapdragon_(system_on_chip)}, 2013.
+
+\bibitem{incontext}
+{A. Gember, A. Akella, J. Pang, A. Varshavsky, and R. Caceres}.
+\newblock {Obtaining Representative Measurements of Cellular Network
+  Performance}.
+\newblock 2012.
+
+\bibitem{livelab-webusage}
+{C. C. Tossell, P. Kortum, A. Rahmati, C. Shepard, and L. Zhong}.
+\newblock {Characterizing web use on smartphones}.
+\newblock 2012.
+
+\bibitem{livelab}
+{C. Shepard, A. Rahmati, C. Tossell, L. Zhong, and P. Kortum}.
+\newblock {LiveLab: Measuring Wireless Networks and Smartphone Users in the
+  Field}.
+\newblock 2010.
+
+\bibitem{http_measure}
+{E. Halepovic, J. Pang, and O. Spatscheck}.
+\newblock {Can you GET Me Now? Estimating the Time-to-First-Byte of HTTP
+  Transactions with Passive Measurements}.
+\newblock 2012.
+
+\bibitem{3g_rrc}
+{F. Qian, Z. Wang, A. Gerber, Z. M. Mao, S. Sen, and O. Spatscheck}.
+\newblock {Characterizing Radio Resource Allocation for 3G Networks}.
+\newblock In {\em Proc. ACM IMC}, 2010.
+
+\bibitem{aro}
+{F. Qian, Z. Wang, A. Gerber,Z. M. Mao, S. Sen, and O. Spatscheck}.
+\newblock {Profiling Resource Usage for Mobile Applications: A Cross-layer
+  Approach}.
+\newblock In {\em Proc. ACM MobiSys}, 2011.
+
+\bibitem{umts_book}
+{H. Holma, and A. Toskala}.
+\newblock {\em {WCDMA for UMTS: HSPA Evolution and LTE.}}
+\newblock {John Wiley and Sons, Inc.}, 2007.
+
+\bibitem{4g_rrc}
+{J. Huang, F. Qian, A. Gerber, Z. M. Mao, S. Sen, and O. Spatscheck}.
+\newblock {A Close Examination of Perfomance and Power Characteristics of 4G
+  LTE Networks}.
+\newblock In {\em Proc. ACM MobiSys}, 2012.
+
+\bibitem{opt.tcp.rlc}
+{J. J. Alcaraz, F. Cerdán, and J. García-Haro}.
+\newblock {Optimizing TCP and RLC interaction in the UMTS Radio Access
+  Network}.
+\newblock 2006.
+
+\bibitem{drx}
+{J. Wigard, T. Kolding, L. Dalsgaard, and C. Coletti}.
+\newblock {On the User Performance of LTE UE Power Savings Schemes with
+  Discontinuous Reception in LTE}.
+\newblock 2009.
+
+\bibitem{drx_analysis}
+{L. Zhou, H. Xu, H. Tian, Y. Gao, L. Du, and L. Chen}.
+\newblock {Performance Analysis of Power Saving Mechanism with Adjustable DRX
+  Cycles in 3GPP LTE}.
+\newblock 2008.
+
+\bibitem{tailender}
+{N. Balasubramanian, A. Balasubramanian, and A. Venkataramani}.
+\newblock {Energy Consumption in Mobile Phones: A Measurement Study and
+  Implications for Network Applications}.
+\newblock 2009.
+
+\bibitem{radiojockey}
+{P. K. Athivarapu, R. Bhagwan, S. Guha, V. Navda, R. Ramjee, D. Arora, V. N.
+  Padmanabhan, and G. Varghese}.
+\newblock {RadioJockey: Mining Program Execution to Optimize Cellular Radio
+  Usage}.
+\newblock 2012.
+
+\bibitem{proteus}
+{Q. Xu, S. Mehrotra, Z. M. Mao, and J. Li}.
+\newblock {PROTEUS: Network Performance Forecast for Real-Time, Interactive
+  Mobile Applications}.
+\newblock In {\em Proc. ACM MobiSys}, 2013.
+
+\bibitem{trafficaware}
+{S. Deng, and H. Balakrishnan}.
+\newblock {Traffic-Aware Techniques to Reduce 3G/LTE Wireless Energy
+  Consumption}.
+\newblock 2012.
+
+\bibitem{souder}
+{S. Souders}.
+\newblock {Making a mobile connection}.
+\newblock
+  \url{http://www.stevesouders.com/blog/2011/09/21/making-a-mobile-connection/%
+}, 2011.
+
+\bibitem{tcp.rto}
+{V. Paxson, and M. Allman }.
+\newblock {Computing TCP’s retransmission timer}, 2000.
+
+\end{thebibliography}

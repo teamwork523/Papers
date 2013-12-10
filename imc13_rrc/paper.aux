@@ -1,0 +1,181 @@
+\relax 
+\ifx\hyper@anchor\@undefined
+\global \let \oldcontentsline\contentsline
+\gdef \contentsline#1#2#3#4{\oldcontentsline{#1}{#2}{#3}}
+\global \let \oldnewlabel\newlabel
+\gdef \newlabel#1#2{\newlabelxx{#1}#2}
+\gdef \newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
+\AtEndDocument{\let \contentsline\oldcontentsline
+\let \newlabel\oldnewlabel}
+\else
+\global \let \hyper@last\relax 
+\fi
+
+\citation{spec-3G-RRC}
+\citation{spec-LTE-RRC}
+\citation{fast_dormancy}
+\citation{aro}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}}
+\citation{3gpp.3G}
+\citation{3gpp.lte}
+\citation{umts_book}
+\citation{spec-3G-RRC}
+\citation{spec-LTE-RRC}
+\citation{3g_rrc}
+\citation{4g_rrc}
+\citation{spec-3G-RRC}
+\citation{spec-LTE-RRC}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Possible 3G and 4G State Machines as Specified by 3GPP.}}{2}{figure.1}}
+\newlabel{fig:statemachine}{{1}{2}{Possible 3G and 4G State Machines as Specified by 3GPP}{figure.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Background}{2}{section.2}}
+\newlabel{sec:background}{{2}{2}{Background\relax }{section.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces The general cellular network architecture}}{2}{figure.2}}
+\newlabel{fig:cell.topology}{{2}{2}{The general cellular network architecture\relax }{figure.2}{}}
+\citation{spec-LTE-RRC}
+\citation{spec-3G-RRC}
+\citation{3g_rrc}
+\citation{fast_dormancy}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Summary of key terminology used.}}{3}{table.1}}
+\newlabel{tab:terminology}{{1}{3}{Summary of key terminology used}{table.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces RRC transient state definitions from observed RLC-layer behavior during state promotions. We examine these individually through QxDM to investigate root causes of latency.}}{3}{figure.3}}
+\newlabel{fig:qxdm.rrc.state}{{3}{3}{RRC transient state definitions from observed RLC-layer behavior during state promotions. We examine these individually through QxDM to investigate root causes of latency}{figure.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}RRC State Inference\\Methodology}{3}{section.3}}
+\newlabel{sec:methodology}{{3}{3}{RRC State Inference\\Methodology\relax }{section.3}{}}
+\citation{3g_rrc}
+\citation{3g_rrc}
+\citation{4g_rrc}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Top graph: 22 measurements of RTTs as a function of time between packets. Ideally, we would expect it to appear like the lower, ideal graph, with no transmissions delays.}}{4}{figure.4}}
+\newlabel{fig:rtt_raw_data_22}{{4}{4}{Top graph: 22 measurements of RTTs as a function of time between packets. Ideally, we would expect it to appear like the lower, ideal graph, with no transmissions delays}{figure.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}RRC Inference Client Design}{4}{subsection.3.1}}
+\citation{3g_rrc}
+\citation{3g_rrc}
+\citation{4g_rrc}
+\citation{tcpdump}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Client-side data collection}}{5}{algorithm.1}}
+\newlabel{alg:client_collection}{{1}{5}{RRC Inference Client Design\relax }{algorithm.1}{}}
+\citation{3g_rrc}
+\citation{3g_rrc}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}RRC Inference Server Design}{6}{subsection.3.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Steps in extracting RRC model and unexpected behavior trends from raw data. Note that the raw data follows a non-ideal pattern. Step B: modified running average function that preserves state transitions applied to one test only. Step C: all tests averaged without outliers removed. Step E: DCH and PCH state extracted; in between them is RRC\_{}TRANSITION rather than FACH --- the anomalous transition period occurs throughout the entire FACH state.}}{6}{figure.5}}
+\newlabel{fig:model_development}{{5}{6}{Steps in extracting RRC model and unexpected behavior trends from raw data. Note that the raw data follows a non-ideal pattern. Step B: modified running average function that preserves state transitions applied to one test only. Step C: all tests averaged without outliers removed. Step E: DCH and PCH state extracted; in between them is RRC\_{}TRANSITION rather than FACH --- the anomalous transition period occurs throughout the entire FACH state}{figure.5}{}}
+\citation{qxdm_flyer}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Cross-Layer Analysis\\Methodology}{7}{section.4}}
+\newlabel{sec:qxdmresults}{{4}{7}{Cross-Layer Analysis\\Methodology\relax }{section.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}QxDM Experiments}{7}{subsection.4.1}}
+\newlabel{sec:exp.setup}{{4.1}{7}{QxDM Experiments\relax }{subsection.4.1}{}}
+\citation{spec-3G-RRC}
+\citation{tcpdump}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces QxDM log entries used in cross layer analysis}}{8}{table.2}}
+\newlabel{tab:QxDM.logs}{{2}{8}{QxDM log entries used in cross layer analysis\relax }{table.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Cross-Layer Mapping Algorithm}{8}{subsection.4.2}}
+\newlabel{sec:cross.layer.algo}{{4.2}{8}{Cross-Layer Mapping Algorithm\relax }{subsection.4.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}RLC Retransmission Calculation}{8}{subsection.4.3}}
+\newlabel{sec:rlc.retx.cal}{{4.3}{8}{RLC Retransmission Calculation\relax }{subsection.4.3}{}}
+\citation{spec-3G-RLC}
+\citation{3g_rrc}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {2}{\ignorespaces Map the SDU to the corresponding PDU list}}{9}{algorithm.2}}
+\newlabel{alg:cross.mapping}{{2}{9}{Cross-Layer Mapping Algorithm\relax }{algorithm.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Evaluation Results}{9}{section.5}}
+\newlabel{sec:clientresults}{{5}{9}{Evaluation Results\relax }{section.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Controlled Experiments}{9}{subsection.5.1}}
+\newlabel{sec:controlledexperiments}{{5.1}{9}{Controlled Experiments\relax }{subsection.5.1}{}}
+\citation{aro}
+\citation{3g_rrc}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Summary of key results}}{10}{table.3}}
+\newlabel{tab:result.summary}{{3}{10}{Summary of key results\relax }{table.3}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Inferred timers for controlled experiments on a major US carrier; ground truth for UMTS from QxDM}}{10}{table.4}}
+\newlabel{tab:tmobile_rrc_state}{{4}{10}{Inferred timers for controlled experiments on a major US carrier; ground truth for UMTS from QxDM\relax }{table.4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.1}Cross-Layer Root-Cause Analysis with QxDM}{10}{subsubsection.5.1.1}}
+\newlabel{sec:qxdm.analysis}{{5.1.1}{10}{Cross-Layer Root-Cause Analysis with QxDM\relax }{subsubsection.5.1.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Comparison of 3G performance across different RRC states for higher-level protocols. FACH TRANSITION refers to a period of high latency when packets are sent during promotions to FACH due to RLC-layer transient state behavior. Note RRC state dependence of DNS and TCP in particular.}}{10}{table.5}}
+\newlabel{tab:extra_tests}{{5}{10}{Comparison of 3G performance across different RRC states for higher-level protocols. FACH TRANSITION refers to a period of high latency when packets are sent during promotions to FACH due to RLC-layer transient state behavior. Note RRC state dependence of DNS and TCP in particular}{table.5}{}}
+\citation{snapdragon}
+\citation{tcp.rto}
+\citation{spec-3G-RLC}
+\newlabel{fig:udp.rtt.gap}{{6(a)}{11}{Subfigure 6(a)\relax }{subfigure.6.1}{}}
+\newlabel{sub@fig:udp.rtt.gap}{{(a)}{11}{Subfigure 6(a)\relax }{subfigure.6.1}{}}
+\newlabel{fig:rlc.retx.gap}{{6(b)}{11}{Subfigure 6(b)\relax }{subfigure.6.2}{}}
+\newlabel{sub@fig:rlc.retx.gap}{{(b)}{11}{Subfigure 6(b)\relax }{subfigure.6.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces RLC layer retransmission ratio has a strong correlation with the delay over FACH state. Measurements on 1 KB packets.}}{11}{figure.6}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {UDP RTT Result}}}{11}{figure.6}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {RLC Retransmission Result}}}{11}{figure.6}}
+\newlabel{fig:udp.rlc.prove}{{6}{11}{RLC layer retransmission ratio has a strong correlation with the delay over FACH state. Measurements on 1 KB packets}{figure.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces The significant RLC retransmission ratio over the stable FACH state and FACH promotion state is consistent with higher-layer measurements and suggests that FACH\_{}INIT has a significant impact on the FACH transition delay.}}{11}{figure.7}}
+\newlabel{fig:RLC.Loss.Per.RRC.UDPTrace}{{7}{11}{The significant RLC retransmission ratio over the stable FACH state and FACH promotion state is consistent with higher-layer measurements and suggests that FACH\_{}INIT has a significant impact on the FACH transition delay}{figure.7}{}}
+\citation{spec-3G-RLC}
+\citation{mobiperf}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces TCP RTO is caused by delays in RLC PDU retransmission. Duplicate ACKs suggest a PDU has been lost. By responding to this probable loss in a timely manner, RLC transmission latency can be reduced and sometimes TCP RTOs can even be avoided.}}{12}{figure.8}}
+\newlabel{fig:RLC.Dup.Ack}{{8}{12}{TCP RTO is caused by delays in RLC PDU retransmission. Duplicate ACKs suggest a PDU has been lost. By responding to this probable loss in a timely manner, RLC transmission latency can be reduced and sometimes TCP RTOs can even be avoided}{figure.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces UDP loss dependence on the device and on RRC transition states}}{12}{figure.9}}
+\newlabel{fig:udp.loss}{{9}{12}{UDP loss dependence on the device and on RRC transition states\relax }{figure.9}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Most UDP packet losses happen in the wired network, not the OTA (or wireless) channel.}}{12}{table.6}}
+\newlabel{tab:udp.loss.root.cause}{{6}{12}{Most UDP packet losses happen in the wired network, not the OTA (or wireless) channel}{table.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Public Deployment of the Inference Tool}{12}{subsection.5.2}}
+\newlabel{sec:largescalestudy}{{5.2}{12}{Public Deployment of the Inference Tool\relax }{subsection.5.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Distribution of RRC 3G timers, for nine UMTS RRC state machines. Note cluster around 2-3.5s.}}{13}{figure.10}}
+\newlabel{fig:timer_cdf}{{10}{13}{Distribution of RRC 3G timers, for nine UMTS RRC state machines. Note cluster around 2-3.5s}{figure.10}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces RTTs and loss rates for two device models on the same LTE network, based on 39 tests for \ignorespaces  \noindent {the Samsung SIII} and 94 for \ignorespaces \noindent { the HTC One}. Note that only the \noindent {HTC} device \ignorespaces  exhibits an additional delay around state demotion. The ``Transition" data is during a period of high latency when sending data around a demotion to RRC\_{}IDLE.}}{13}{figure.11}}
+\newlabel{fig:device_compare}{{11}{13}{RTTs and loss rates for two device models on the same LTE network, based on 39 tests for \Paperonly {M1} \TReport {the Samsung SIII} and 94 for \Paperonly {M2}\TReport { the HTC One}. Note that only the \TReport {HTC} device \Paperonly {M2} exhibits an additional delay around state demotion. The ``Transition" data is during a period of high latency when sending data around a demotion to RRC\_{}IDLE}{figure.11}{}}
+\citation{spec-3G-RLC}
+\citation{proteus}
+\citation{spec-3G-RLC}
+\citation{3g_rrc}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Promotion delays for each state for all carriers surveyed, calculated by subtracting the RTT in the highest-power state from the RTTs in states where promotions are required. The anomalous behavior FACH\_{}TRANSITION and LTE\_{}TRANSITION, when it occurs, results in significant delays.}}{14}{figure.12}}
+\newlabel{fig:all_carrier_rrc_delays}{{12}{14}{Promotion delays for each state for all carriers surveyed, calculated by subtracting the RTT in the highest-power state from the RTTs in states where promotions are required. The anomalous behavior FACH\_{}TRANSITION and LTE\_{}TRANSITION, when it occurs, results in significant delays}{figure.12}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Packets lost per state as a percent. Note high losses during transition and RRC\_{}IDLE for LTE.}}{14}{figure.13}}
+\newlabel{fig:loss_compare}{{13}{14}{Packets lost per state as a percent. Note high losses during transition and RRC\_{}IDLE for LTE}{figure.13}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Proposed RLC Fast\\ Retransmission}{14}{section.6}}
+\newlabel{sec:eval}{{6}{14}{Proposed RLC Fast\\ Retransmission\relax }{section.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Cost-Benefit Analysis}{14}{subsection.6.1}}
+\citation{3g_rrc}
+\citation{4g_rrc}
+\citation{drx_analysis}
+\citation{drx}
+\citation{aro}
+\citation{souder}
+\citation{radiojockey}
+\citation{tailender}
+\citation{trafficaware}
+\citation{opt.tcp.rlc}
+\citation{livelab}
+\citation{livelab-webusage}
+\citation{http_measure}
+\citation{incontext}
+\citation{jamlogger}
+\bibstyle{abbrv}
+\bibdata{robustnet}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces \textit  {Win}: RLC Fast Re-Tx avoids a TCP RTO. \textit  {Draw Plus}: Prediction accuracy is more than 50\%. \textit  {Draw Minus}: Prediction accuracy is less than 50\%. \textit  {Loss}: All predictions are wrong.}}{15}{figure.14}}
+\newlabel{fig:cost.benefit.detail}{{14}{15}{\textit {Win}: RLC Fast Re-Tx avoids a TCP RTO. \textit {Draw Plus}: Prediction accuracy is more than 50\%. \textit {Draw Minus}: Prediction accuracy is less than 50\%. \textit {Loss}: All predictions are wrong}{figure.14}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces The RLC \emph  {Fast Re-Tx} occurrence percentage and impact on average RLC RTT value. Delta is the difference between average RTT of each case and the average RLC RTT in the QxDM traces. Delta Ratio is defined as the delta RTT divided by the average RTT.}}{15}{table.7}}
+\newlabel{tab:rlc.fast.sim}{{7}{15}{The RLC \emph {Fast Re-Tx} occurrence percentage and impact on average RLC RTT value. Delta is the difference between average RTT of each case and the average RLC RTT in the QxDM traces. Delta Ratio is defined as the delta RTT divided by the average RTT}{table.7}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Related Work}{15}{section.7}}
+\@writefile{toc}{\contentsline {section}{\numberline {8}conclusion}{15}{section.8}}
+\bibcite{3gpp.3G}{1}
+\bibcite{3gpp.lte}{2}
+\bibcite{mobiperf}{3}
+\bibcite{tcpdump}{4}
+\bibcite{fast_dormancy}{5}
+\bibcite{jamlogger}{6}
+\bibcite{qxdm_flyer}{7}
+\bibcite{spec-3G-RLC}{8}
+\bibcite{spec-3G-RRC}{9}
+\bibcite{spec-LTE-RRC}{10}
+\bibcite{snapdragon}{11}
+\bibcite{incontext}{12}
+\bibcite{livelab-webusage}{13}
+\bibcite{livelab}{14}
+\bibcite{http_measure}{15}
+\bibcite{3g_rrc}{16}
+\bibcite{aro}{17}
+\bibcite{umts_book}{18}
+\bibcite{4g_rrc}{19}
+\bibcite{opt.tcp.rlc}{20}
+\bibcite{drx}{21}
+\bibcite{drx_analysis}{22}
+\bibcite{tailender}{23}
+\bibcite{radiojockey}{24}
+\bibcite{proteus}{25}
+\bibcite{trafficaware}{26}
+\bibcite{souder}{27}
+\bibcite{tcp.rto}{28}
+\@writefile{toc}{\contentsline {section}{\numberline {9}References}{16}{section.9}}

@@ -1,0 +1,201 @@
+\documentclass{sig-alternate-10pt}
+
+\usepackage{epsfig,xspace,multirow,capt-of,comment}
+\usepackage[hyphens]{url}
+\usepackage{hyperref}
+\usepackage[hyphenbreaks]{breakurl}
+\usepackage{graphicx,amssymb,amsmath,endnotes}
+\usepackage{times}
+\usepackage{subfigure}
+\usepackage{ulem}
+\usepackage{rotating}
+\usepackage{wasysym, pifont}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{placeins}
+\usepackage{balance}
+\usepackage{epstopdf}
+\epstopdfsetup{update}
+%%%%%
+% used in QxDM section
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{enumitem}
+%%%%%
+% for subfigure and space adjustment
+%\usepackage[demo]{graphicx}
+%\usepackage{subcaption}
+%\usepackage[showframe]{geometry}
+%\usepackage{amsthm}
+%\theoremstyle{definition} \newtheorem{apitest}{Test}
+
+\setcounter{secnumdepth}{5}
+
+\hyphenpenalty=7000
+\tolerance=600
+
+\normalem
+
+\newcommand{\rot}[1]{\begin{sideways}#1\end{sideways}}
+%\newcommand{\mysection}[1]{\vspace{-.00in}\section{#1}\vspace{-.00in}}
+%\newcommand{\mysubsection}[1]{\vspace{-.00in}\subsection{#1}\vspace{-.00in}}
+%\newcommand{\mysubsubsection}[1]{\vspace{-.00in}\subsubsection{#1}\vspace{-.00in}}
+
+\newcommand{\MR}[1]{\multirow{2}{*}{#1}}
+
+\newcommand{\mysection}[1]{\vspace{-.07in}\section{#1}\vspace{-.02in}}
+\newcommand{\mysubsection}[1]{\vspace{-.05in}\subsection{#1}\vspace{-.02in}}
+\newcommand{\mysubsubsection}[1]{\vspace{-.05in}\subsubsection{#1}\vspace{-.02in}}
+
+
+\newcommand{\hd}[1]{\small{\textbf{\texttt{#1}}}\normalsize}
+\newcommand{\hds}[1]{\small{\textbf{\texttt{#1}}}}
+\newcommand{\hdf}[1]{\small{\textbf{\texttt{#1}}}\footnotesize}
+
+\newcommand{\ISP}{$\sf\small{ISP}$}
+\newcommand{\ISPP}{$\sf\small{ISP}$ }
+\newcommand{\UMICH}{$\sf\small{UMICH}$}
+\newcommand{\UMICHH}{$\sf\small{UMICH}$ }
+
+\newcommand{\YY}{\CIRCLE}
+\newcommand{\NN}{\Circle}
+\newcommand{\YN}{\RIGHTcircle}
+\newcommand{\XX}{\ding{53}}
+
+\newcommand{\Ignore}[1]{{\small }}
+\newcommand{\mycomment}[1]{{\color{red}[\textsf{#1}]}}
+
+
+
+\specialcomment{Notes}{%
+        \noindent$\bf\Rightarrow\Rightarrow$%
+}{%
+        $\Leftarrow\Leftarrow$%
+}
+\providecommand{\Note}[1]{%
+        \noindent{\bf$\Rightarrow\Rightarrow$#1$\Leftarrow\Leftarrow$}%
+}
+\newcommand{\Donothing}{\ignorespaces\ifhmode\unskip\fi}
+\newcommand{\HideNotes}{%
+        \excludecomment{Notes}%
+        \renewcommand{\Note}[1]{\Donothing}%
+}
+
+%here is how to use it:
+%\TReport{ test}
+%\begin{TReports}
+%test 
+%\end{TReports}
+
+\specialcomment{TReports}{%
+}{%
+}
+\providecommand{\TReport}[1]{%
+        \noindent{#1}%
+}
+\newcommand{\HideTReport}{%
+        \excludecomment{TReports}%
+        \renewcommand{\TReport}[1]{\Donothing}%
+}
+
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\newcommand{\etc}{\emph{etc.}\xspace}
+\newcommand{\ie}{\emph{i.e.,}\xspace}
+\newcommand{\eg}{\emph{e.g.,}\xspace}
+\newcommand{\etal}{\emph{et al.}\xspace}
+\newcommand{\wrt}{\emph{w.r.t.}\xspace}
+\newcommand{\aka}{\emph{a.k.a.}\xspace}
+\newcommand{\AlgBox}[1]{{\framebox[1.2\width]{\textbf{#1}}}}
+
+\renewcommand{\paragraph}[1]{\smallskip\noindent{\bf{#1.}}}
+\newcommand{\paragrapha}[1]{\smallskip\noindent{\bf{#1}}}
+%\renewcommand{\algorithmiccomment}[1]{//#1}
+
+\makeatletter
+  \newcommand\figcaption{\def\@captype{figure}\caption}
+  \newcommand\tabcaption{\def\@captype{table}\caption}
+\makeatother
+
+\newcommand{\vsp}{\vspace{+0.15in}}
+
+\newcommand{\nsection}[1]{\vspace{-1em}\section{#1}\vspace{-0.7em}}
+\newcommand{\nsubsection}[1]{\vspace{-0.85em}\subsection{#1}\vspace{-0.55em}}
+\newcommand{\nsubsubsection}[1]{\vspace{-0.4em}\subsubsection{#1}\vspace{-0.3em}}
+\newcommand{\ncaption}[1]{
+ 	\vspace{-1.5em}
+	\caption{#1}
+ 	\vspace{-1.3em} % sometime two figure might overlap because of this
+}
+
+\HideTReport
+
+\begin{document}
+\title{Discovering RRC State Behavior and Performance Implications in Cellular Networks}
+
+
+% TODO figure out authors:  order and who at Tmobile do we include?
+
+%\dagger is more pretty
+\author{
+Sanae Rosen$^\#$, Haokun Luo$^\#$, Z.~Morley Mao$^\#$, Jie Hui$^*$, 
+Aaron Drake$^*$, Kevin Lau$^*$\\
+$^\#$University of Michigan, $^*$T-Mobile USA Inc.\footnote{The views presented here asre as individuals and do not necessarily reflect any position of T-Mobile.} 
+} % end author
+
+\iffalse
+\numberofauthors{6}
+\author{
+\alignauthor
+Sanae Rosen \\
+	\affaddr{University of Michigan} \\
+%	\affaddr{Ann Arbor, MI} \\
+%	\email{\normalsize sanae@umich.edu} \\
+\alignauthor
+Haokun Luo \\
+	\affaddr{University of Michigan} \\
+%	\affaddr{Ann Arbor, MI} \\
+%	\email{\normalsize haokun@umich.edu} \\
+\alignauthor
+Z. Morley Mao \\
+        \affaddr{University of Michigan} \\
+%        \affaddr{Ann Arbor, MI} \\
+%	\email{\normalsize zmao@umich.edu} \\
+\and
+\alignauthor
+Jie Hui \\
+        \affaddr{T-mobile} \\
+%        \affaddr{Seattle, WA} \\
+%        \email{\normalsize Jie.Hui@t-mobile.com} \\
+\alignauthor
+Aaron Drake \\
+        \affaddr{T-mobile} \\
+%        \affaddr{Seattle, WA} \\
+%        \email{\normalsize Aaron.Drake@t-mobile.com} \\
+\alignauthor
+Kevin Lau \\
+        \affaddr{T-mobile} \\
+%        \affaddr{Seattle, WA} \\
+%        \email{\normalsize Kevin.Lau@t-mobile.com} \\
+}
+\fi
+
+%\large{Paper ID: 75 \hspace{0.5in} Number of Pages: 10+1}
+
+\maketitle
+
+
+\input{abstract}
+\input{intro}
+\input{overview}
+\input{methodology}
+\input{qxdmresults}
+\input{clientresults}
+\input{eval}
+\input{related}
+\input{conclusion}
+%\newpage \clearpage\setcounter{page}{1}
+\bibliographystyle{abbrv}
+\bibliography{robustnet}  % sigproc.bib is the name of the Bibliography in this case
+\end{document}
+

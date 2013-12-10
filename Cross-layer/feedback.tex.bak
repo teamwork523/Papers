@@ -1,0 +1,18 @@
+\section{Feedback Tool Design}
+\label{sec:feedback}
+
+The goal the real-time user feedback is to collect user dissatisfaction moment with minimized user interruption, accurately logging feedback, and no extra cellular traffic. \S~\ref{subsec:feedback.approach} talks about various approaches to design the tool, and compare the trade-offs. \S~\ref{subsec:feedback.implementation} explains the realization of the real-time user feedback tool.
+
+\subsection{Approach}
+\label{subsec:feedback.approach}
+There are two perspective of achieve feedback logging accuracy. First, any unintended feedback signals should not be recorded. Statistically, the false positive error should be minimized. Second, whenever users generate the feedback, we must capture it. Since user feedback is extremely important information, we have zero tolerance on false negative error. 
+
+There are several ways to collect user feedback: screen interaction, device sensors, and hardware inputs. The touch screen is the main innovation of smartphone compared with feature phone. It accepts the majority of the user inputs to the device. That also implies either the screen interaction is too simple to be unclassified from other interactions, or the interaction is over complicated to interfere user behaviors. The sensors on the smartphone are not very accurate. It is desirable for inconsistent unstable sensor behaviors due to software implementation bugs or hardware issues~\cite{bad.sensor}. Hardware button is relative more accurate than device sensors to avoid any false negative errors. Although we may not distinguish the original button functionality with the feedback signals, the false positive error is also not avoidable in the screen interaction approach. We decide to use the volume up and down buttons to capture all the user feedback signals.
+
+\subsection{Implementation}
+\label{subsec:feedback.implementation}
+The feedback tool is essentially another Android application that runs in the background to minimize the user interruption. Whenever the user presses the volume up or volume down button, it receives a volume change broadcast signal, then logs the timestamp onto the disk. Notice that no extra network traffic is generated during the process. Later, we could dump the feedback file from the device and cooperate the QxDM traces to perform the cross-layer analysis as we discussed in \S~\ref{subsec:cross-layer.mapping}.
+
+
+
+

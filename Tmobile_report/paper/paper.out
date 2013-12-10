@@ -1,0 +1,20 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}
+\BOOKMARK [1][-]{section.2}{Related Work}{}
+\BOOKMARK [1][-]{section.3}{Measurements}{}
+\BOOKMARK [2][-]{subsection.3.1}{RRC State Inference}{section.3}
+\BOOKMARK [2][-]{subsection.3.2}{Control Experiments}{section.3}
+\BOOKMARK [1][-]{section.4}{Cross Layer Analysis}{}
+\BOOKMARK [2][-]{subsection.4.1}{QxDM Tool}{section.4}
+\BOOKMARK [2][-]{subsection.4.2}{Verification Latency in QxDM}{section.4}
+\BOOKMARK [2][-]{subsection.4.3}{Cross Layer Algorithm}{section.4}
+\BOOKMARK [2][-]{subsection.4.4}{RLC Retransmission Calculation}{section.4}
+\BOOKMARK [2][-]{subsection.4.5}{Root Cause Analysis and Solutions}{section.4}
+\BOOKMARK [1][-]{section.5}{Evaluation}{}
+\BOOKMARK [2][-]{subsection.5.1}{RTT Estimation}{section.5}
+\BOOKMARK [2][-]{subsection.5.2}{Cost-Benefit Analysis}{section.5}
+\BOOKMARK [1][-]{section.6}{Discussion}{}
+\BOOKMARK [2][-]{subsection.6.1}{Future Work}{section.6}
+\BOOKMARK [2][-]{subsection.6.2}{Limitation}{section.6}
+\BOOKMARK [1][-]{section.7}{Conclusions}{}
+\BOOKMARK [1][-]{section.8}{Acknowledgments}{}
+\BOOKMARK [1][-]{section.9}{References}{}
